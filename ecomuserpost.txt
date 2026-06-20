@@ -1,0 +1,290 @@
+post----------------------------http://127.0.0.1:5000/api/user/register----------------------send
+body-----------------raw------------------json
+{
+     "username":"lakshmi bobbadi",
+    "useremail":"lakshmihavila10@gmail.com",
+    "useraddress":"Gollapudi vijayawada",
+    "userpassword":"lakshmi@123",
+    "usergender":"female"
+
+}
+
+output:
+{
+    "message": "OTP sent successfully",
+    "status": "success",
+    "token": ".eJxFj8sKwjAURH9FLl2K9oEKWalYWhGtCwVxd2Nu22jS1KRVRPx3USpu5xyGmSe0jmyFmoCBwosrtexxwzkKCf0vJI1S_WmJN6kw8KfFJx-cjO68Gp27GyuAgRdyLwg9mwzj-SiK94tBcVa-nqTGXrPhKsjH9XIza0N-WB-z2C6zx0EWVdSkOWVdGwphyTlgkBilsG6F7N3kGR94R4GdVFAlyAKDnDQq-g0pTfW5A30wTQ0Mtn67ixp4vQGWzk-4.aiQQJw.iD3ZnUvfGeLcurvaQ4YtIpaosnc"
+}
+
+
+post-------------------------------------http://127.0.0.1:5000/api/user/verify-otp--------------------------send
+body-----------------raw------------------json
+{
+     "otp":"P0uT3t",
+      "token": ".eJxFj8sKwjAURH9FLl2K9oEKWalYWhGtCwVxd2Nu22jS1KRVRPx3USpu5xyGmSe0jmyFmoCBwosrtexxwzkKCf0vJI1S_WmJN6kw8KfFJx-cjO68Gp27GyuAgRdyLwg9mwzj-SiK94tBcVa-nqTGXrPhKsjH9XIza0N-WB-z2C6zx0EWVdSkOWVdGwphyTlgkBilsG6F7N3kGR94R4GdVFAlyAKDnDQq-g0pTfW5A30wTQ0Mtn67ixp4vQGWzk-4.aiQQJw.iD3ZnUvfGeLcurvaQ4YtIpaosnc"
+
+
+}
+
+output:
+{
+    "message": "User registered successfully",
+    "status": "success"
+}
+
+post------------------------------http://127.0.0.1:5000/api/user/login-----------------------------send
+body-------------------------raw-----------------------json
+{
+    "email":"lakshmihavila10@gmail.com",
+    "password":"lakshmi@123"
+}
+
+output:
+{
+    "message": "login successfully",
+    "status": "success",
+    "user": {
+        "useremail": "lakshmihavila10@gmail.com",
+        "userid": "0ad2f19e-61a2-11f1-8c90-00ffc9a5ea30",
+        "username": "lakshmi bobbadi"
+    }
+}
+
+
+
+
+post----------------------http://127.0.0.1:5000/api/cart/add--------------------------send
+body---------------raw----------------json
+{
+    "itemid":"caf4fe20-60ac-11f1-8c90-00ffc9a5ea30",
+    "quantity":"1"
+}
+
+output:
+{
+    "message": "Item added to cart",
+    "status": "success"
+}
+
+
+get-------------------------------------http://127.0.0.1:5000/api/cart/view------------------------send
+
+output:
+{
+    "cart_items": [
+        {
+            "category": "toys",
+            "image": "http://127.0.0.1:5000/static/uploads/W8tY8u.jpeg",
+            "itemid": "caf4fe20-60ac-11f1-8c90-00ffc9a5ea30",
+            "itemname": "super car",
+            "price": 58990.0,
+            "quantity": 1,
+            "total": 58990.0
+        }
+    ],
+    "status": "success",
+    "summary": {
+        "delivery": 40,
+        "grand_total": 61979.5,
+        "subtotal": 58990.0,
+        "tax": 2949.5
+    }
+}
+
+
+put--------------------------http://127.0.0.1:5000/api/cart/update-------------------send
+
+{
+    "itemid":"caf4fe20-60ac-11f1-8c90-00ffc9a5ea30",
+    "quantity":"1"
+}
+
+output:
+{
+    "message": "cart update successfuly",
+    "status": "success"
+}
+
+
+
+delete------------------------------http://127.0.0.1:5000/api/cart/delete----------------send
+body------------------raw----------------json
+{
+    "itemid":"caf4fe20-60ac-11f1-8c90-00ffc9a5ea30"
+}
+
+output:
+{
+    "message": "Item removed from cart successfully",
+    "status": "success"
+}
+
+
+get-----------------------------------------http://127.0.0.1:5000/api/search?q=car----------------------send
+params
+
+output:
+  "items": [
+        {
+            "about": "car_about",
+            "category": "toys",
+            "description": "car_desc",
+            "image_url": "/static/uploads/W8tY8u.jpeg?external=True",
+            "itemid": "caf4fe20-60ac-11f1-8c90-00ffc9a5ea30",
+            "itemname": "super car",
+            "price": "58990.0000",
+            "quantity": 197
+        },
+
+
+
+get-------------------------- http://127.0.0.1:5000/api/orders/4------------------------send
+output:
+{
+    "items": [
+        {
+            "item_category": "toys",
+            "item_image": "http://127.0.0.1:5000/static/uploads/H7cO0g.jpg",
+            "item_name": "car",
+            "item_price": 58990.0,
+            "item_quantity": 1,
+            "itemid": "6b378a7a-6950-11f1-b7c4-00ffc9a5ea30",
+            "order_details_id": 5,
+            "order_id": 4,
+            "subtotal": 58990.0
+        }
+    ],
+    "order": {
+        "created_at": "2026-06-16 13:31:25",
+        "delivery": 40.0,
+        "grand_total": 61979.5,
+        "orderid": 4,
+        "razorpay_order_id": "order_T2EFtPmzjztKe1",
+        "razorpay_payment_id": "pay_T2EH7akxL2kLpy",
+        "tax": 2949.5,
+        "total_amount": 58990.0
+    },
+    "status": "success"
+}
+
+post-----------------------------------http://127.0.0.1:5000/api/buy_now--------------------send
+body-----------raw----------------json
+{
+"itemid":"6b378a7a-6950-11f1-b7c4-00ffc9a5ea30",
+"quantity":2
+}
+
+
+output:
+{
+    "item": {
+        "about": "car_about",
+        "category": "toys",
+        "description": "car_desc",
+        "image": "http://127.0.0.1:5000/static/uploads/H7cO0g.jpg",
+        "itemid": "6b378a7a-6950-11f1-b7c4-00ffc9a5ea30",
+        "itemname": "car",
+        "price": 58990.0,
+        "quantity": 2,
+        "stock": 199
+    },
+    "message": "Single buy item stored successfully",
+    "next_url": "/api/payment/create-order",
+    "payment_type": "single",
+    "status": "success"
+}
+
+
+
+get------------------------------------http://127.0.0.1:5000/api/items/6b378a7a-6950-11f1-b7c4-00ffc9a5ea30-----------------------send
+output:
+{
+    "item": {
+        "category": "toys",
+        "created_at": "Tue, 16 Jun 2026 12:25:54 GMT",
+        "image_url": "http://127.0.0.1:5000/static/uploads/H7cO0g.jpg",
+        "item_about": "car_about",
+        "item_desc": "car_desc",
+        "itemid": "6b378a7a-6950-11f1-b7c4-00ffc9a5ea30",
+        "itemname": "car",
+        "price": 58990.0,
+        "quantity": 199
+    },
+    "status": "success"
+}
+
+
+
+
+
+post----------------------------http://127.0.0.1:5000/api/add-review/6b378a7a-6950-11f1-b7c4-00ffc9a5ea30--------------------send
+body-------------------raw-----------------json
+{
+    "rating":3,
+    "review_text":"good"
+}
+output:
+{
+    "message": "Review added successfully",
+    "status": "success"
+}
+
+
+
+post----------------------------------http://127.0.0.1:5000/api/forgotpassword-------------------------send
+body--------raw----------------json
+{
+    "email":"lakshmihavila10@gmail.com"
+}
+
+output:
+{
+    "message": "Reset link sent successfully",
+    "status": "success"
+}
+
+post-------------------------------http://127.0.0.1:5000/api/resetpassword/Imxha3NobWloYXZpbGExMEBnbWFpbC5jb20i.ajTnLQ.jqMeIcEvzqtAfuVXRd-DODsntVA-----------------send
+body---------------------raw--------------------json
+{
+    "password":"lakshmi@123",
+    "confirm_password":"lakshmi@123"
+}
+
+output:
+{
+    "message": "Password updated successfully",
+    "status": "success"
+}
+
+get----------------------------http://127.0.0.1:5000/api/category/toys---------------------------send
+output:
+{
+    "category": "toys",
+    "products": [
+        {
+            "category": "toys",
+            "image": "http://127.0.0.1:5000/static/uploads/X5bO3j.jpg",
+            "item_about": "A \"teddy\" most commonly refers to a stuffed toy bear or a specific style of women's one-piece lingerie.",
+            "item_desc": "A teddy (or teddy bear) is a soft, stuffed children's toy shaped like a bear.",
+            "itemid": "4f885090-6962-11f1-86d4-00ffc9a5ea30",
+            "itemname": "teddy",
+            "price": 1000.0,
+            "quantity": 1
+        },
+        {
+            "category": "toys",
+            "image": "http://127.0.0.1:5000/static/uploads/B1fC8r.jpg",
+            "item_about": "Understanding Your Car: Familiarize yourself with basic components like the engine, transmission, and brakes.",
+            "item_desc": "A car (or automobile) is a wheeled, self-powered motor vehicle used primarily for passenger transportation on roads.",
+            "itemid": "6bfa9982-6b03-11f1-86d4-00ffc9a5ea30",
+            "itemname": "car",
+            "price": 45000.0,
+            "quantity": 0
+        }
+    ],
+    "status": "success",
+    "total_items": 2
+}
+
+
+

@@ -1,0 +1,416 @@
+------------------29-05-2026-------------------------
+
+Microsoft Windows [Version 10.0.26200.8524]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\bobba>mysql -version
+ERROR 1045 (28000): Access denied for user 'ODBC'@'localhost' (using password: NO)
+
+C:\Users\bobba>mysql --version
+mysql  Ver 8.0.45 for Win64 on x86_64 (MySQL Community Server - GPL)
+
+C:\Users\bobba>mysql -u root -p
+Enter password: *****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 9
+Server version: 8.0.45 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2026, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> create database ecom2728db;
+Query OK, 1 row affected (0.06 sec)
+
+mysql> use ecom2728db;
+Database changed
+mysql> create table admindata(adminid binary(16) primary key,
+    -> admin_username varchar(50) not null,
+    -> admin_useremail varchar(50) not null,
+    -> admin_password varbinary(255) not null,
+    -> admin_address tinytext not null,
+    -> admin_phoneno varchar(10) not null,
+    -> admin_agree enum('on','off'),
+    -> admin_filename varchar(15) unique key,
+    -> unique key(admin_useremail));
+Query OK, 0 rows affected (0.14 sec)
+
+mysql> create table items(itemid binary(16) primary key,
+    -> item_name longtext,
+    -> item_description longtext,
+    -> item_about longtext,
+    -> price decimal(20,4) not null,
+    -> quantity bigint,
+    -> category enum('home_appliences','Grocery','Fashion','Electronics','Sports','toys'),
+    -> item_filename varchar(20) unique key,
+    -> created_at datetime default now(),
+    -> added_by binary(16),
+    -> foreign key(added_by) references admindata(adminid) on update cascade on delete cascade);
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> create table userdata(userid binary(16) primary key,username varchar(50),
+    -> useremail varchar(50) unique key not null,
+    -> userpassword varbinary(255),
+    -> useraddress text,
+    -> usergender enum('male','female','others'),
+    -> userphone varchar(10));
+Query OK, 0 rows affected (0.07 sec)
+
+mysql>
+
+
+
+
+-----------------------------------01-06-2026--------------------------------
+
+
+
+
+
+
+
+
+
+
+Microsoft Windows [Version 10.0.26200.8524]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\bobba>mysql -u root -p
+Enter password: *****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 11
+Server version: 8.0.45 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2026, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| ecom2728db         |
+| extra_data         |
+| extra_db           |
+| information_schema |
+| insta_clone        |
+| mysql              |
+| performance_schema |
+| relation_info      |
+| sample_data        |
+| snm2728db          |
+| sys                |
+| world              |
++--------------------+
+12 rows in set (0.07 sec)
+
+mysql> use ecom2728db;
+Database changed
+mysql> show tables
+    -> ;
++----------------------+
+| Tables_in_ecom2728db |
++----------------------+
+| admindata            |
+| items                |
+| userdata             |
++----------------------+
+3 rows in set (0.06 sec)
+
+mysql> select * from admindata;
++------------------------------------+----------------+----------------------------+----------------------------------------------------------------------------------------------------------------------------+----------------------+---------------+-------------+----------------+
+| adminid                            | admin_username | admin_useremail            | admin_password                                                                                                             | admin_address        | admin_phoneno | admin_agree | admin_filename |
++------------------------------------+----------------+----------------------------+----------------------------------------------------------------------------------------------------------------------------+----------------------+---------------+-------------+----------------+
+| 0x967A19B55D8511F18C9000FFC9A5EA30 | lakshmi        | bobbadilakshmi10@gmail.com | 0x2432622431322452737275683478384F4F78495263374D6B476B372F4F3976472F4970454A38726A35506C326D7934716A675151392F4B426669724B | Gollapudi vijayawada |               | NULL        | NULL           |
++------------------------------------+----------------+----------------------------+----------------------------------------------------------------------------------------------------------------------------+----------------------+---------------+-------------+----------------+
+1 row in set (0.00 sec)
+
+mysql>
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------08-06-2026----------------------------
+
+
+
+
+
+
+
+
+
+
+
+Microsoft Windows [Version 10.0.26200.8524]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\bobba>mysql --version
+mysql  Ver 8.0.45 for Win64 on x86_64 (MySQL Community Server - GPL)
+
+C:\Users\bobba>mysql -u root -p
+Enter password: *****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 144
+Server version: 8.0.45 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2026, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| ecom2728db         |
+| extra_data         |
+| extra_db           |
+| information_schema |
+| insta_clone        |
+| mysql              |
+| performance_schema |
+| relation_info      |
+| sample_data        |
+| snm2728db          |
+| sys                |
+| world              |
++--------------------+
+12 rows in set (0.10 sec)
+
+mysql> use ecom2728db;
+Database changed
+mysql> show tables;
++----------------------+
+| Tables_in_ecom2728db |
++----------------------+
+| admindata            |
+| items                |
+| userdata             |
++----------------------+
+3 rows in set (0.03 sec)
+
+mysql> create table cart(cartid binary(16) primary key,
+    -> itemid binary(16),
+    -> userid binary(16),
+    -> quantity int unsigned,
+    -> foreign key(itemid) references items(itemid) on update cascade on delete cascade,
+    -> foreign key(userid) references userdata(userid) on update cascade on delete cascade);
+Query OK, 0 rows affected (0.16 sec)
+
+mysql> desc items;
++------------------+---------------------------------------------------------------------------+------+-----+-------------------+-------------------+
+| Field            | Type                                                                      | Null | Key | Default           | Extra             |
++------------------+---------------------------------------------------------------------------+------+-----+-------------------+-------------------+
+| itemid           | binary(16)                                                                | NO   | PRI | NULL              |                   |
+| item_name        | longtext                                                                  | YES  |     | NULL              |                   |
+| item_description | longtext                                                                  | YES  |     | NULL              |                   |
+| item_about       | longtext                                                                  | YES  |     | NULL              |                   |
+| price            | decimal(20,4)                                                             | NO   |     | NULL              |                   |
+| quantity         | bigint                                                                    | YES  |     | NULL              |                   |
+| category         | enum('home_appliences','Grocery','Fashion','Electronics','Sports','toys') | YES  |     | NULL              |                   |
+| item_filename    | varchar(20)                                                               | YES  | UNI | NULL              |                   |
+| created_at       | datetime                                                                  | YES  |     | CURRENT_TIMESTAMP | DEFAULT_GENERATED |
+| added_by         | binary(16)                                                                | YES  | MUL | NULL              |                   |
++------------------+---------------------------------------------------------------------------+------+-----+-------------------+-------------------+
+10 rows in set (0.17 sec)
+
+mysql> select bin_to_uuid(itemid) from items;
++--------------------------------------+
+| bin_to_uuid(itemid)                  |
++--------------------------------------+
+| caf4fe20-60ac-11f1-8c90-00ffc9a5ea30 |
+| e45055a5-5fe6-11f1-8c90-00ffc9a5ea30 |
+| e9e8ddfb-60aa-11f1-8c90-00ffc9a5ea30 |
++--------------------------------------+
+3 rows in set (0.03 sec)
+
+mysql> select * from cart;
+Empty set (0.01 sec)
+
+mysql>
+
+
+
+
+
+
+
+
+
+
+
+---------------------------------------------------11-06-2026-------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+Microsoft Windows [Version 10.0.26200.8655]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\bobba>mysql --version
+mysql  Ver 8.0.45 for Win64 on x86_64 (MySQL Community Server - GPL)
+
+C:\Users\bobba>mysql -u root -p
+Enter password: *****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 13
+Server version: 8.0.45 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2026, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| ecom2728db         |
+| extra_data         |
+| extra_db           |
+| information_schema |
+| insta_clone        |
+| mysql              |
+| performance_schema |
+| relation_info      |
+| sample_data        |
+| snm2728db          |
+| sys                |
+| world              |
++--------------------+
+12 rows in set (0.06 sec)
+
+mysql> use ecom2728db;
+Database changed
+mysql> create table orders(orderid int unsigned primary key auto_increment,
+    -> razorpay_ordid varchar(100),razorpay_payment varchar(100),
+    -> userid binary(16),total_amount decimal(20,4),delivery int unsigned default 40,
+    -> tax decimal(10,2),grand_total decimal(20,4),status varchar(30) default 'paid',
+    -> created_at datetime default now(),
+    -> foreign key(userid) references userdata(userid) on update cascade on delete cascade);
+Query OK, 0 rows affected (0.08 sec)
+
+
+mysql> create table order_items(order_detailsid int unsigned primary key auto_increment,
+    -> orderid int unsigned,
+    -> itemid binary(16),
+    -> item_name longtext,
+    -> item_price decimal(10,2),
+    -> item_quantity int unsigned,
+    -> subtotal decimal(20,4),
+    -> item_category enum('home_appliences','Grocery','Fashion','Electronics','sports','toys'),
+    -> item_filename varchar(20),
+    -> foreign key(itemid) references items(itemid) on update cascade on delete cascade,
+    -> foreign key(orderid) references orders(orderid) on update cascade on delete cascade);
+Query OK, 0 rows affected (0.05 sec)
+
+mysql>
+
+
+
+
+
+
+-------------------------------18-06-2026---------------------------------------------
+
+
+
+
+
+
+
+Microsoft Windows [Version 10.0.26200.8655]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\bobba>mysql --version
+mysql  Ver 8.0.45 for Win64 on x86_64 (MySQL Community Server - GPL)
+
+C:\Users\bobba>mysql -u root -p
+Enter password: *****
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 21
+Server version: 8.0.45 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2026, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> show dabases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'dabases' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| ecom2728db         |
+| extra_data         |
+| extra_db           |
+| information_schema |
+| insta_clone        |
+| mysql              |
+| performance_schema |
+| relation_info      |
+| sample_data        |
+| snm2728db          |
+| sys                |
+| world              |
++--------------------+
+12 rows in set (0.09 sec)
+
+mysql> use ecom2728db;
+Database changed
+mysql> show tables;
++----------------------+
+| Tables_in_ecom2728db |
++----------------------+
+| admindata            |
+| cart                 |
+| items                |
+| order_items          |
+| orders               |
+| userdata             |
++----------------------+
+6 rows in set (0.02 sec)
+
+mysql> create table reviews(r_id binary(16) primary key,r_text longtext,rating enum('1','2','3','4','5'),
+    -> itemid binary(16),
+    -> userid binary(16),
+    -> foreign key(itemid) references items(itemid) on update cascade on delete cascade,
+    -> foreign key(userid) references userdata(userid) on update cascade on delete cascade);
+Query OK, 0 rows affected (1 min 9.70 sec)
+
+mysql>

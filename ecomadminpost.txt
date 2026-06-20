@@ -1,0 +1,137 @@
+
+post----------http://127.0.0.1:5000/api/admin/register-----------send
+raw----body--------json
+{
+    "username":"lakshmi",
+    "useremail":"bobbadilakshmi10@gmail.com",
+    "useraddress":"Gollapudi vijayawada",
+    "userpassword":"lakshmi@123",
+    "ussragree":"on"
+}
+output:
+{
+    "message": "OTP sent successfully",
+    "status": "success",
+    "token": ".eJxVz0sPwUAUBeC_IjddirQ2ZVYeoUhQIVE2cutOaphHzSgp8d9F4rk958tJzg2QlNCbwnGrUXFgIPHgdkpA9afiCoUEBqlJUyTxIoHfyp5FbWvUH8_RuYuxBAy8euoFdW-tVTjvDFcLP9LlNQ4mq2TU4-NktvcHsS2W8ZAWY3WM9NWf8n5oOknYLT-bSGS5c8AgMlJiXpConMUeS7wg4ZdllnNgupDyHeU7o5-nPsaccmDQblC3mcH9AZsFV7E.ahqPDw.Z8Xic5x8LfbEbXOi7Ly7Ba1biQE"
+}
+
+post-------http://127.0.0.1:5000/api/admin/verify-otp--------send
+raw----body----------json
+{
+    "otp":"X2zE3x",
+    "token":".eJxVz10LgjAYBeC_Ei9eRqYV2a4iEKkIy6vu4tUtnW5ubVlW9N8j6PP2nIcD5wZIJa93jWWmRsmAgMDKFpJD96diErkAAqlKU6T8Rbz-NH8WvUzJP67R2rMyFAg4fup4vpNY0xTDNojjdp5k41UVVWM3npwid67DRWDK0Vr48jI8lPlmM3GXsz03y88mUmqYtUAgUkKgbijvnHiJFzwjxS_LDWNA6kaId6QLVT9PfYw6aiCw9a_hoIX7A4yDV7k.ah0qCQ.k6b2bB5sKnn2-DGKD8BeLTLiYWg"
+}
+
+output:
+{
+    "message": "Admin Register Successfully",
+    "status": "Success"
+}
+
+
+POST-----http://127.0.0.1:5000/api/admin/login------------send
+body----raw-----json
+{
+    "email":"bobbadilakshmi10@gmail.com",
+    "password":"lakshmi@123"
+}
+
+
+
+output
+{
+    "admin": {
+        "adminemail": "bobbadilakshmi10@gmail.com",
+        "adminid": "967a19b5-5d85-11f1-8c90-00ffc9a5ea30",
+        "adminname": "lakshmi"
+    },
+    "message": "login successfully",
+    "status": "success"
+}
+
+
+
+post------------http://127.0.0.1:5000/api/admin/add-item----------send
+body---------------formdata
+output
+{
+    "image": "http://127.0.0.1:5000/static/uploads/K3fY6f.jpeg",
+    "message": "Added successfully",
+    "status": "success"
+}
+
+
+
+get--------------http://127.0.0.1:5000/api/admin/items---------------send
+
+output:
+{
+    "products": [
+        {
+            "category": "toys",
+            "image": "/static/uploads/K3fY6f.jpeg?_externam=True",
+            "item_about": "car_about",
+            "item_desc": "car_desc",
+            "itemid": "fd4d19d3-5f20-11f1-8c90-00ffc9a5ea30",
+            "itemname": "car",
+            "price": 58990.0,
+            "quantity": 200
+        }
+    ],
+    "status": "success"
+
+get---------------------http://127.0.0.1:5000/api/admin/item/fd4d19d3-5f20-11f1-8c90-00ffc9a5ea30--------------------send
+output:
+{
+    "products": {
+        "category": "toys",
+        "image": "http://127.0.0.1:5000/static/uploads/K3fY6f.jpeg",
+        "item_about": "car_about",
+        "item_desc": "car_desc",
+        "itemid": "fd4d19d3-5f20-11f1-8c90-00ffc9a5ea30",
+        "itemname": "car",
+        "price": 58990.0,
+        "quantity": 200
+    },
+    "status": "success"
+}
+
+
+delete-------------------------http://127.0.0.1:5000/api/admin/delete-item/fd4d19d3-5f20-11f1-8c90-00ffc9a5ea30--------------------send
+output:
+{
+    "message": "item deleted successfully",
+    "status": "success"
+}
+
+
+
+
+
+put--------------------------------http://127.0.0.1:5000/api/admin/update-item/caf4fe20-60ac-11f1-8c90-00ffc9a5ea30-------------------------send
+body----------formdata-----------
+output:
+
+{
+    "image": "http://127.0.0.1:5000/static/uploads/W8tY8u.jpeg",
+    "message": "Item updated successfully",
+    "status": "success"
+}
+
+put-------------------http://127.0.0.1:5000/api/admin/profile-update---------------------------send
+body----------------formdata
+output:
+
+{
+    "message": "Admin profile updated successfully",
+    "profile_image": "http://127.0.0.1:5000/static/uploads/G3yX2a.jpg",
+    "status": "success"
+}
+
+
+post----------------------------------http://127.0.0.1:5000/api/admin/logout-------------------send
+output:
+{
+    "message": "Logout successful",
+    "status": "success"
+}
