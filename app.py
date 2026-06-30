@@ -28,7 +28,7 @@ client = razorpay.Client(auth=("rzp_test_SzppdEzy51SPYd", "ZXV3p1lSRtZFXpt9wXac4
 from werkzeug.utils import secure_filename #used to check secured filenames or not
 import os
 
-mydb=connection.MySQLConnection(user='flaskuser',host='localhost',password='password',db='ecomdb')
+mydb=connection.MySQLConnection(user='root',host='localhost',password='password',db='flaskdb', ssl_disabled=True)
 app=Flask(__name__)
 app.wsgi_app=ProxyFix(app.wsgi_app,x_proto=1,x_host=1)
 app.permanent_session_lifetime=timedelta(days=1)
@@ -1405,6 +1405,64 @@ def addreview(itemid):
     finally:
         if cursor:
             cursor.close()
+@app.route('/api/reviews/<itemid>', methods=['GET'])
+def get_reviews(itemid):
+
+    cursor = None
+
+    try:
+
+        # validate uuid
+        try:
+            uuid.UUID(itemid)
+        except ValueError:
+            return jsonify({
+                'status': 'failed',
+                'message': 'invalid item id'
+            }), 400
+
+        mydb.ping(reconnect=True)
+
+        cursor = mydb.cursor(dictionary=True)
+
+        cursor.execute("""
+
+            SELECT
+                r.rating,
+                r.r_text,
+                u.username
+
+            FROM reviews r
+
+            INNER JOIN userdata u
+                ON r.userid = u.userid
+
+            WHERE r.itemid = uuid_to_bin(%s)
+
+            ORDER BY r_id DESC
+
+        """, [itemid])
+
+        reviews = cursor.fetchall()
+
+        return jsonify({
+            'status': 'success',
+            'reviews': reviews
+        }), 200
+
+    except Exception as e:
+
+        print("REVIEW FETCH ERROR =", str(e))
+
+        return jsonify({
+            'status': 'failed',
+            'message': str(e)
+        }), 500
+
+    finally:
+        if cursor:
+            cursor.close()
+
 @app.route('/api/forgotpassword', methods=['POST'])
 def forgotpassword():
 
@@ -1422,10 +1480,10 @@ def forgotpassword():
 
     if count_email[0] == 1:
 
-        reset_link = f"http://127.0.0.1:5000/api/resetpassword/{endata(f_email)}"
+        reset_link = f"http://localhost:5173/resetpassword/{endata(f_email)}"
 
         subject = "Reset Password Link"
-        body = f"Click the link to reset password:\n{reset_link}"
+        body = f"http://localhost:5173/resetpassword/{endata(f_email)}"
 
         send_mail(
             to=f_email,
@@ -1515,6 +1573,127 @@ def category(ctype):
     except Exception as e:
         print("category ERROR :", str(e))
         return jsonify({'status': 'failed','message': str(e)}), 500
+
+    finally:
+        if cursor:
+            cursor.close()
+
+# ==========================
+# ADMIN FORGOT PASSWORD
+# ==========================
+
+@app.route('/api/admin/forgotpassword', methods=['POST'])
+def admin_forgotpassword():
+
+    cursor = None
+
+    try:
+        data = request.get_json()
+
+        f_email = data.get('email')
+
+        cursor = mydb.cursor(buffered=True)
+
+        cursor.execute(
+            'SELECT COUNT(*) FROM admindata WHERE admin_useremail=%s',
+            [f_email]
+        )
+
+        count_email = cursor.fetchone()
+
+        if count_email[0] == 1:
+
+            token = endata(f_email)
+
+            reset_link = f"http://localhost:5173/admin/resetpassword/{token}"
+
+            print("Reset Link:", reset_link)
+
+            send_mail(
+                to=f_email,
+                subject="Admin Reset Password Link",
+                body=reset_link
+            )
+
+            return {
+                "status": "success",
+                "message": "Reset link sent successfully"
+            }, 200
+
+        return {
+            "status": "error",
+            "message": "Email not found"
+        }, 404
+
+    except Exception as e:
+
+        return {
+            "status": "error",
+            "message": str(e)
+        }, 500
+
+    finally:
+        if cursor:
+            cursor.close()
+
+
+# ==========================
+# ADMIN RESET PASSWORD
+# ==========================
+
+@app.route('/api/admin/resetpassword/<token>', methods=['GET', 'POST'])
+def admin_resetpassword(token):
+
+    if request.method == "GET":
+        return {
+            "status": "success",
+            "message": "Reset page reached",
+            "token": token
+        }
+
+    cursor = None
+
+    try:
+        data = request.get_json()
+
+        npassword = data.get('password')
+        cpassword = data.get('confirm_password')
+
+        if npassword != cpassword:
+            return {
+                "status": "error",
+                "message": "Passwords do not match"
+            }, 400
+
+        email = dndata(token)
+
+        hashed_pwd = bcrypt.generate_password_hash(
+            npassword
+        ).decode('utf-8')
+
+        cursor = mydb.cursor(buffered=True)
+
+        cursor.execute(
+            '''
+            UPDATE admindata
+            SET admin_password=%s
+            WHERE admin_useremail=%s
+            ''',
+            [hashed_pwd, email]
+        )
+
+        mydb.commit()
+
+        return {
+            "status": "success",
+            "message": "Password updated successfully"
+        }, 200
+
+    except Exception as e:
+        return {
+            "status": "error",
+            "message": str(e)
+        }, 400
 
     finally:
         if cursor:

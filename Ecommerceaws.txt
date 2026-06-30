@@ -1,0 +1,1274 @@
+
+
+(ecommerceprj) C:\Users\bobba\Desktop\Flask_classwork\ecommerce2728>python app.py
+C:\Users\bobba\Desktop\Flask_classwork\ecommerce2728
+C:\Users\bobba\Desktop\Flask_classwork\ecommerce2728\static\uploads
+ * Serving Flask app 'app'
+ * Debug mode: off
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+
+(ecommerceprj) C:\Users\bobba\Desktop\Flask_classwork\ecommerce2728>pip list
+Package                Version
+---------------------- ---------
+bcrypt                 5.0.0
+blinker                1.9.0
+cachelib               0.14.0
+certifi                2026.5.20
+charset-normalizer     3.4.7
+click                  8.4.1
+colorama               0.4.6
+Flask                  3.1.3
+Flask-Bcrypt           1.0.1
+flask-cors             6.0.5
+Flask-Session          0.8.0
+idna                   3.18
+itsdangerous           2.2.0
+Jinja2                 3.1.6
+MarkupSafe             3.0.3
+msgspec                0.21.1
+mysql-connector-python 9.7.0
+pillow                 12.2.0
+pip                    26.1.2
+razorpay               2.0.1
+reportlab              4.5.1
+requests               2.34.2
+urllib3                2.7.0
+Werkzeug               3.1.8
+
+
+(ecommerceprj) C:\Users\bobba\Desktop\Flask_classwork\ecommerce2728>pip freeze > requirements.txt
+
+
+
+(ecommerceprj) C:\Users\bobba\Desktop\Flask_classwork\ecommerce2728>mysqldump -u root -p
+Usage: mysqldump [OPTIONS] database [tables]
+OR     mysqldump [OPTIONS] --databases [OPTIONS] DB1 [DB2 DB3...]
+OR     mysqldump [OPTIONS] --all-databases [OPTIONS]
+For more options, use mysqldump --help
+
+(ecommerceprj) C:\Users\bobba\Desktop\Flask_classwork\ecommerce2728>mysqldump -u root -p ecom2728db > "C:\Users\bobba\Desktop\Flask_classwork\ecommerce2728\data.sql
+Enter password: *****
+
+(ecommerceprj) C:\Users\bobba\Desktop\Flask_classwork\ecommerce2728>git init
+Initialized empty Git repository in C:/Users/bobba/Desktop/Flask_classwork/ecommerce2728/.git/
+
+(ecommerceprj) C:\Users\bobba\Desktop\Flask_classwork\ecommerce2728>git add .
+
+(ecommerceprj) C:\Users\bobba\Desktop\Flask_classwork\ecommerce2728>git commit -m "first commit"
+[master (root-commit) 1a00d59] first commit
+ 34 files changed, 2674 insertions(+)
+ create mode 100644 EcommercesSql.txt
+ create mode 100644 __pycache__/cmail.cpython-314.pyc
+ create mode 100644 __pycache__/otp.cpython-314.pyc
+ create mode 100644 __pycache__/stoken.cpython-314.pyc
+ create mode 100644 app.py
+ create mode 100644 cmail.py
+ create mode 100644 data.sql
+ create mode 100644 ecomadminpost.txt
+ create mode 100644 ecomuserpost.txt
+ create mode 100644 flask_session/0cb1f9a665b6bc1774664adcafb6752b
+ create mode 100644 flask_session/12b5267d52440ce4469c2ae74df1ea49
+ create mode 100644 flask_session/2029240f6d1128be89ddc32729463129
+ create mode 100644 flask_session/23c8a720420758d3a0eb585128ad64e7
+ create mode 100644 flask_session/2addd17217bb51beb112769ff6dc7f71
+ create mode 100644 flask_session/4393ca2cc4706f7a774c6b17159af739
+ create mode 100644 flask_session/5027a6f0093fae247572a86ca34191ef
+ create mode 100644 flask_session/651e3ead51efbe6079d7314c0d6b4a84
+ create mode 100644 flask_session/7f76d0299551e7bfcc7ce5b7ba1da05f
+ create mode 100644 flask_session/900f4fbab46c40acbe5fcad2c3f49943
+ create mode 100644 flask_session/b051258928666d881bb276d389e00ecf
+ create mode 100644 flask_session/b445c8f3f004a883d17b18ad03093cac
+ create mode 100644 flask_session/d27a067f893a8874ccc1c20d12fa8b35
+ create mode 100644 flask_session/ddfd7fde0732f0946f41c7199fa275f7
+ create mode 100644 flask_session/e27a6916cca87af4fde044500f80b799
+ create mode 100644 flask_session/e99e04f078157c95e23aead1fbfea158
+ create mode 100644 flask_session/eaa1c6466137674942c9935e35d9ffc8
+ create mode 100644 flask_session/f548865af99bf38db83a97317487598d
+ create mode 100644 otp.py
+ create mode 100644 requirements.txt
+ create mode 100644 static/uploads/B1fC8r.jpg
+ create mode 100644 static/uploads/M1sY5s.jpg
+ create mode 100644 static/uploads/V1iG0i
+ create mode 100644 static/uploads/X5bO3j.jpg
+ create mode 100644 stoken.py
+
+(ecommerceprj) C:\Users\bobba\Desktop\Flask_classwork\ecommerce2728>git branch -M main
+
+(ecommerceprj) C:\Users\bobba\Desktop\Flask_classwork\ecommerce2728>git remote add origin https://github.com/bobbadilakshmi10-cmyk/Ecommerce.git
+
+(ecommerceprj) C:\Users\bobba\Desktop\Flask_classwork\ecommerce2728>git push -u origin main
+Enumerating objects: 40, done.
+Counting objects: 100% (40/40), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (38/38), done.
+Writing objects: 100% (40/40), 253.69 KiB | 16.91 MiB/s, done.
+Total 40 (delta 16), reused 0 (delta 0), pack-reused 0 (from 0)
+remote: Resolving deltas: 100% (16/16), done.
+To https://github.com/bobbadilakshmi10-cmyk/Ecommerce.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+(ecommerceprj) C:\Users\bobba\Desktop\Flask_classwork\ecommerce2728>ssh -i "C:\Users\bobba\Downloads\ecom2728.pem" ubuntu@15.134.221.0
+The authenticity of host '15.134.221.0 (15.134.221.0)' can't be established.
+ED25519 key fingerprint is SHA256:g/gx6T/JDhCdts3Toxlyar1VFHMrHJSRaUZ0vXqBpMs.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? y
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added '15.134.221.0' (ED25519) to the list of known hosts.
+Welcome to Ubuntu 26.04 LTS (GNU/Linux 7.0.0-1006-aws x86_64)
+
+ * Documentation:  https://docs.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Sat Jun 20 06:35:59 UTC 2026
+
+  System load:  0.0               Temperature:           -273.1 C
+  Usage of /:   30.5% of 6.61GB   Processes:             115
+  Memory usage: 25%               Users logged in:       0
+  Swap usage:   0%                IPv4 address for ens5: 172.31.21.107
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+Enable ESM Apps to receive additional future security updates.
+See https://ubuntu.com/esm or run: sudo pro status
+
+
+The list of available updates is more than a week old.
+To check for new updates run: sudo apt update
+
+
+The programs included with the Ubuntu system are free software;
+the exact distribution terms for each program are described in the
+individual files in /usr/share/doc/*/copyright.
+
+Ubuntu comes with ABSOLUTELY NO WARRANTY, to the extent permitted by
+applicable law.
+
+ubuntu@ip-172-31-21-107:~$ sudo apt update
+Hit:1 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute InRelease
+Get:2 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates InRelease [137 kB]
+Get:3 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-backports InRelease [136 kB]
+Get:4 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/universe amd64v3 Packages [16.3 MB]
+Get:5 http://security.ubuntu.com/ubuntu resolute-security InRelease [137 kB]
+Get:6 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/universe Translation-en [6329 kB]
+Get:7 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/universe amd64 Components [4556 kB]
+Get:8 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/universe amd64 c-n-f Metadata [313 kB]
+Get:9 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/multiverse amd64v3 Packages [291 kB]
+Get:10 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/multiverse Translation-en [127 kB]
+Get:11 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/multiverse amd64 Components [50.0 kB]
+Get:12 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/multiverse amd64 c-n-f Metadata [8276 B]
+Get:13 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 Packages [257 kB]
+Get:14 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main Translation-en [68.9 kB]
+Get:15 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64 Components [49.4 kB]
+Get:16 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64 c-n-f Metadata [4400 B]
+Get:17 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/universe amd64v3 Packages [150 kB]
+Get:18 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/universe Translation-en [47.0 kB]
+Get:19 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/universe amd64 Components [62.2 kB]
+Get:20 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/universe amd64 c-n-f Metadata [3908 B]
+Get:21 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/restricted amd64v3 Packages [208 kB]
+Get:22 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/restricted Translation-en [36.1 kB]
+Get:23 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/multiverse amd64v3 Packages [3360 B]
+Get:24 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/multiverse Translation-en [772 B]
+Get:25 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/multiverse amd64 Components [216 B]
+Get:26 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/multiverse amd64 c-n-f Metadata [256 B]
+Get:27 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-backports/main amd64 Components [212 B]
+Get:28 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-backports/main amd64 c-n-f Metadata [112 B]
+Get:29 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-backports/universe amd64 Components [216 B]
+Get:30 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-backports/universe amd64 c-n-f Metadata [116 B]
+Get:31 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-backports/restricted amd64 Components [216 B]
+Get:32 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-backports/restricted amd64 c-n-f Metadata [120 B]
+Get:33 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-backports/multiverse amd64 Components [216 B]
+Get:34 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-backports/multiverse amd64 c-n-f Metadata [120 B]
+Get:35 http://security.ubuntu.com/ubuntu resolute-security/main amd64v3 Packages [216 kB]
+Get:36 http://security.ubuntu.com/ubuntu resolute-security/main Translation-en [59.2 kB]
+Get:37 http://security.ubuntu.com/ubuntu resolute-security/main amd64 Components [31.1 kB]
+Get:38 http://security.ubuntu.com/ubuntu resolute-security/main amd64 c-n-f Metadata [3592 B]
+Get:39 http://security.ubuntu.com/ubuntu resolute-security/universe amd64v3 Packages [125 kB]
+Get:40 http://security.ubuntu.com/ubuntu resolute-security/universe Translation-en [38.7 kB]
+Get:41 http://security.ubuntu.com/ubuntu resolute-security/universe amd64 Components [43.1 kB]
+Get:42 http://security.ubuntu.com/ubuntu resolute-security/universe amd64 c-n-f Metadata [3264 B]
+Get:43 http://security.ubuntu.com/ubuntu resolute-security/multiverse amd64 Components [212 B]
+Get:44 http://security.ubuntu.com/ubuntu resolute-security/multiverse amd64 c-n-f Metadata [120 B]
+Fetched 29.8 MB in 4s (8045 kB/s)
+17 packages can be upgraded. Run 'apt list --upgradable' to see them.
+ubuntu@ip-172-31-21-107:~$ sudo apt upgrade -y
+Upgrading:
+  ca-certificates   libssl3t64  openssl                  rsync   tmux                    vim         vim-runtime  xxd
+  inetutils-telnet  nano        openssl-provider-legacy  telnet  update-notifier-common  vim-common  vim-tiny
+
+Not upgrading yet due to phasing:
+  python3-distupgrade  ubuntu-release-upgrader-core
+
+Summary:
+  Upgrading: 15, Installing: 0, Removing: 0, Not Upgrading: 2
+14 standard LTS security updates
+  Download size: 16.4 MB
+  Freed space: 38.9 kB
+
+Get:1 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 update-notifier-common all 3.207.1 [212 kB]
+Get:2 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 openssl-provider-legacy amd64 3.5.5-1ubuntu3.2 [40.4 kB]
+Get:3 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 libssl3t64 amd64 3.5.5-1ubuntu3.2 [2366 kB]
+Get:4 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 openssl amd64 3.5.5-1ubuntu3.2 [1243 kB]
+Get:5 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 ca-certificates all 20260601~26.04.1 [139 kB]
+Get:6 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 vim amd64 2:9.1.2141-1ubuntu4.5 [2071 kB]
+Get:7 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 vim-common all 2:9.1.2141-1ubuntu4.5 [494 kB]
+Get:8 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 vim-tiny amd64 2:9.1.2141-1ubuntu4.5 [870 kB]
+Get:9 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 vim-runtime all 2:9.1.2141-1ubuntu4.5 [7512 kB]
+Get:10 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 xxd amd64 2:9.1.2141-1ubuntu4.5 [68.4 kB]
+Get:11 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 inetutils-telnet amd64 2:2.7-2ubuntu1.1 [108 kB]
+Get:12 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 nano amd64 8.7.1-1ubuntu0.1 [290 kB]
+Get:13 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 rsync amd64 3.4.1+ds1-7ubuntu0.3 [447 kB]
+Get:14 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 telnet all 0.17+2.7-2ubuntu1.1 [3650 B]
+Get:15 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 tmux amd64 3.6a-2ubuntu0.1 [516 kB]
+Fetched 16.4 MB in 0s (82.5 MB/s)
+Preconfiguring packages ...
+(Reading database ... 85303 files and directories currently installed.)
+Preparing to unpack .../update-notifier-common_3.207.1_all.deb ...
+Unpacking update-notifier-common (3.207.1) over (3.207) ...
+Preparing to unpack .../openssl-provider-legacy_3.5.5-1ubuntu3.2_amd64v3.deb ...
+Unpacking openssl-provider-legacy (3.5.5-1ubuntu3.2) over (3.5.5-1ubuntu3) ...
+Setting up openssl-provider-legacy (3.5.5-1ubuntu3.2) ...
+(Reading database ... 85303 files and directories currently installed.)
+Preparing to unpack .../libssl3t64_3.5.5-1ubuntu3.2_amd64v3.deb ...
+Unpacking libssl3t64:amd64 (3.5.5-1ubuntu3.2) over (3.5.5-1ubuntu3) ...
+Setting up libssl3t64:amd64 (3.5.5-1ubuntu3.2) ...
+(Reading database ... 85303 files and directories currently installed.)
+Preparing to unpack .../00-openssl_3.5.5-1ubuntu3.2_amd64v3.deb ...
+Unpacking openssl (3.5.5-1ubuntu3.2) over (3.5.5-1ubuntu3) ...
+Preparing to unpack .../01-ca-certificates_20260601~26.04.1_all.deb ...
+Unpacking ca-certificates (20260601~26.04.1) over (20260223) ...
+Preparing to unpack .../02-vim_2%3a9.1.2141-1ubuntu4.5_amd64v3.deb ...
+Unpacking vim (2:9.1.2141-1ubuntu4.5) over (2:9.1.2141-1ubuntu4.2) ...
+Preparing to unpack .../03-vim-common_2%3a9.1.2141-1ubuntu4.5_all.deb ...
+Unpacking vim-common (2:9.1.2141-1ubuntu4.5) over (2:9.1.2141-1ubuntu4.2) ...
+Preparing to unpack .../04-vim-tiny_2%3a9.1.2141-1ubuntu4.5_amd64v3.deb ...
+Unpacking vim-tiny (2:9.1.2141-1ubuntu4.5) over (2:9.1.2141-1ubuntu4.2) ...
+Preparing to unpack .../05-vim-runtime_2%3a9.1.2141-1ubuntu4.5_all.deb ...
+Unpacking vim-runtime (2:9.1.2141-1ubuntu4.5) over (2:9.1.2141-1ubuntu4.2) ...
+Preparing to unpack .../06-xxd_2%3a9.1.2141-1ubuntu4.5_amd64v3.deb ...
+Unpacking xxd (2:9.1.2141-1ubuntu4.5) over (2:9.1.2141-1ubuntu4.2) ...
+Preparing to unpack .../07-inetutils-telnet_2%3a2.7-2ubuntu1.1_amd64v3.deb ...
+Unpacking inetutils-telnet (2:2.7-2ubuntu1.1) over (2:2.7-2ubuntu1) ...
+Preparing to unpack .../08-nano_8.7.1-1ubuntu0.1_amd64v3.deb ...
+Unpacking nano (8.7.1-1ubuntu0.1) over (8.7.1-1) ...
+Preparing to unpack .../09-rsync_3.4.1+ds1-7ubuntu0.3_amd64v3.deb ...
+Unpacking rsync (3.4.1+ds1-7ubuntu0.3) over (3.4.1+ds1-7ubuntu0.2) ...
+Preparing to unpack .../10-telnet_0.17+2.7-2ubuntu1.1_all.deb ...
+Unpacking telnet (0.17+2.7-2ubuntu1.1) over (0.17+2.7-2ubuntu1) ...
+Preparing to unpack .../11-tmux_3.6a-2ubuntu0.1_amd64v3.deb ...
+Unpacking tmux (3.6a-2ubuntu0.1) over (3.6a-2) ...
+Setting up update-notifier-common (3.207.1) ...
+update-notifier-download.service is a disabled or a static unit not running, not starting it.
+update-notifier-motd.service is a disabled or a static unit not running, not starting it.
+Setting up inetutils-telnet (2:2.7-2ubuntu1.1) ...
+Setting up xxd (2:9.1.2141-1ubuntu4.5) ...
+Setting up vim-common (2:9.1.2141-1ubuntu4.5) ...
+Setting up nano (8.7.1-1ubuntu0.1) ...
+Setting up vim-runtime (2:9.1.2141-1ubuntu4.5) ...
+Setting up openssl (3.5.5-1ubuntu3.2) ...
+Setting up tmux (3.6a-2ubuntu0.1) ...
+Setting up rsync (3.4.1+ds1-7ubuntu0.3) ...
+rsync.service is a disabled or a static unit not running, not starting it.
+Setting up vim (2:9.1.2141-1ubuntu4.5) ...
+Setting up telnet (0.17+2.7-2ubuntu1.1) ...
+Setting up vim-tiny (2:9.1.2141-1ubuntu4.5) ...
+Setting up ca-certificates (20260601~26.04.1) ...
+Updating certificates in /etc/ssl/certs...
+rehash: warning: skipping ca-certificates.crt, it does not contain exactly one certificate or CRL
+2 added, 25 removed; done.
+Processing triggers for install-info (7.2-5ubuntu2) ...
+Processing triggers for libc-bin (2.43-2ubuntu2) ...
+Processing triggers for man-db (2.13.1-1build1) ...
+Processing triggers for debianutils (5.23.2build1) ...
+Processing triggers for ca-certificates (20260601~26.04.1) ...
+Updating certificates in /etc/ssl/certs...
+0 added, 0 removed; done.
+Running hooks in /etc/ca-certificates/update.d...
+done.
+Scanning processes...
+Scanning candidates...
+Scanning linux images...
+
+Running kernel seems to be up-to-date.
+
+Restarting services...
+ /etc/needrestart/restart.d/systemd-manager
+ /etc/needrestart/restart.d/systemd-user
+ systemctl restart packagekit.service ssh.service systemd-journald.service systemd-networkd.service systemd-resolved.service systemd-udevd.service udisks2.service
+
+Service restarts being deferred:
+ systemctl restart networkd-dispatcher.service
+ systemctl restart systemd-logind.service
+ systemctl restart unattended-upgrades.service
+
+No containers need to be restarted.
+
+User sessions running outdated binaries:
+ ubuntu @ session #1: apt[1454], sshd-session[1154], sudo[1453]
+ ubuntu @ user manager: (sd-pam)[1161]
+ubuntu@ip-172-31-21-107:~$ sudo apt install python3-pip python3-venv git nginx mysql-server net-tools
+htop -y
+git is already the newest version (1:2.53.0-1ubuntu1).
+git set to manually installed.
+Installing:
+  mysql-server  net-tools  nginx  python3-pip  python3-venv
+
+Installing dependencies:
+  build-essential          gcc-15                     libclone-perl            libhtml-tagset-perl     libpython3-dev           mysql-client
+  bzip2                    gcc-15-base                libdpkg-perl             libhtml-template-perl   libpython3.14-dev        mysql-client-core
+  cpp                      gcc-15-x86-64-linux-gnu    libencode-locale-perl    libhttp-date-perl       libquadmath0             mysql-common
+  cpp-15                   gcc-x86-64-linux-gnu       libexpat1-dev            libhttp-message-perl    libstdc++-15-dev         mysql-server-core
+  cpp-15-x86-64-linux-gnu  libalgorithm-diff-perl     libfakeroot              libhwasan0              libtcmalloc-minimal4t64  nginx-common
+  cpp-x86-64-linux-gnu     libalgorithm-diff-xs-perl  libfcgi-bin              libio-html-perl         libtimedate-perl         python3-dev
+  dpkg-dev                 libalgorithm-merge-perl    libfcgi-perl             libisl23                libtsan2                 python3-pip-whl
+  fakeroot                 libasan8                   libfcgi0t64              libitm1                 libubsan1                python3-setuptools-whl
+  g++                      libc-dev-bin               libfile-fcntllock-perl   liblsan0                liburi-perl              python3-wheel
+  g++-15                   libc6-dev                  libgcc-15-dev            liblwp-mediatypes-perl  linux-libc-dev           python3.14-dev
+  g++-15-x86-64-linux-gnu  libcc1-0                   libgomp1                 libmecab2               lto-disabled-list        python3.14-venv
+  g++-x86-64-linux-gnu     libcgi-fast-perl           libgoogle-perftools4t64  libmpc3                 make                     rpcsvc-proto
+  gcc                      libcgi-pm-perl             libhtml-parser-perl      libprotobuf-lite32t64   manpages-dev             zlib1g-dev
+
+Suggested packages:
+  bzip2-doc       debian-tag2upload-keyring  autoconf  gdb                   glibc-doc                   libstdc++-15-doc       make-doc
+  cpp-doc         g++-multilib               automake  gcc-doc               bzr                         libbusiness-isbn-perl  fcgiwrap
+  gcc-15-locales  g++-15-multilib            libtool   gcc-15-multilib       libdata-dump-perl           libmime-base32-perl    nginx-doc
+  cpp-15-doc      gcc-15-doc                 flex      gdb-x86-64-linux-gnu  libipc-sharedcache-perl     libregexp-ipv6-perl    ssl-cert
+  debian-keyring  gcc-multilib               bison     libc-devtools         libio-compress-brotli-perl  libwww-perl
+
+Recommended packages:
+  mecab-ipadic-utf
+
+Summary:
+  Upgrading: 0, Installing: 83, Removing: 0, Not Upgrading: 2
+  Download size: 117 MB
+  Space needed: 507 MB / 4676 MB available
+
+Continue? [Y/n] y
+Get:1 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 mysql-common all 5.8+1.1.1ubuntu2 [7002 B]
+Get:2 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libtcmalloc-minimal4t64 amd64 2.18.1-1 [138 kB]
+Get:3 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libgoogle-perftools4t64 amd64 2.18.1-1 [200 kB]
+Get:4 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 mysql-client-core amd64 8.4.9-0ubuntu0.26.04.1 [1983 kB]
+Get:5 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 mysql-client amd64 8.4.9-0ubuntu0.26.04.1 [9142 B]
+Get:6 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libmecab2 amd64 0.996-15.1build4 [208 kB]
+Get:7 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libprotobuf-lite32t64 amd64 3.21.12-15ubuntu1 [253 kB]
+Get:8 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 mysql-server-core amd64 8.4.9-0ubuntu0.26.04.1 [19.6 MB]
+Get:9 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 mysql-server amd64 8.4.9-0ubuntu0.26.04.1 [1592 kB]
+Get:10 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libc-dev-bin amd64 2.43-2ubuntu2 [23.7 kB]
+Get:11 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 linux-libc-dev amd64 7.0.0-22.22 [1548 kB]
+Get:12 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 rpcsvc-proto amd64 1.4.3-1build1 [68.6 kB]
+Get:13 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libc6-dev amd64 2.43-2ubuntu2 [2277 kB]
+Get:14 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 gcc-15-base amd64 15.2.0-16ubuntu1 [39.1 kB]
+Get:15 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libisl23 amd64 0.27-1build1 [692 kB]
+Get:16 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libmpc3 amd64 1.3.1-3 [55.0 kB]
+Get:17 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 cpp-15-x86-64-linux-gnu amd64 15.2.0-16ubuntu1 [13.0 MB]
+Get:18 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 cpp-15 amd64 15.2.0-16ubuntu1 [1044 B]
+Get:19 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 cpp-x86-64-linux-gnu amd64 4:15.2.0-5ubuntu1 [5852 B]
+Get:20 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 cpp amd64 4:15.2.0-5ubuntu1 [22.4 kB]
+Get:21 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libcc1-0 amd64 16-20260322-1ubuntu1 [53.8 kB]
+Get:22 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libgomp1 amd64 16-20260322-1ubuntu1 [163 kB]
+Get:23 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libitm1 amd64 16-20260322-1ubuntu1 [29.9 kB]
+Get:24 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libasan8 amd64 16-20260322-1ubuntu1 [3181 kB]
+Get:25 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 liblsan0 amd64 16-20260322-1ubuntu1 [1397 kB]
+Get:26 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libtsan2 amd64 16-20260322-1ubuntu1 [2875 kB]
+Get:27 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libubsan1 amd64 16-20260322-1ubuntu1 [1242 kB]
+Get:28 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libhwasan0 amd64 16-20260322-1ubuntu1 [1733 kB]
+Get:29 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libquadmath0 amd64 16-20260322-1ubuntu1 [156 kB]
+Get:30 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libgcc-15-dev amd64 15.2.0-16ubuntu1 [2867 kB]
+Get:31 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 gcc-15-x86-64-linux-gnu amd64 15.2.0-16ubuntu1 [25.6 MB]
+Get:32 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 gcc-15 amd64 15.2.0-16ubuntu1 [539 kB]
+Get:33 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 gcc-x86-64-linux-gnu amd64 4:15.2.0-5ubuntu1 [1220 B]
+Get:34 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 gcc amd64 4:15.2.0-5ubuntu1 [5014 B]
+Get:35 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libstdc++-15-dev amd64 15.2.0-16ubuntu1 [2928 kB]
+Get:36 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 g++-15-x86-64-linux-gnu amd64 15.2.0-16ubuntu1 [14.5 MB]
+Get:37 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 g++-15 amd64 15.2.0-16ubuntu1 [26.8 kB]
+Get:38 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 g++-x86-64-linux-gnu amd64 4:15.2.0-5ubuntu1 [980 B]
+Get:39 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 g++ amd64 4:15.2.0-5ubuntu1 [1110 B]
+Get:40 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 make amd64 4.4.1-3 [197 kB]
+Get:41 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libdpkg-perl all 1.23.7ubuntu1 [289 kB]
+Get:42 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 bzip2 amd64 1.0.8-6build2 [34.4 kB]
+Get:43 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 lto-disabled-list all 79 [14.2 kB]
+Get:44 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 dpkg-dev all 1.23.7ubuntu1 [1062 kB]
+Get:45 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 build-essential amd64 12.12ubuntu2 [5270 B]
+Get:46 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libfakeroot amd64 1.37.2-1 [34.0 kB]
+Get:47 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 fakeroot amd64 1.37.2-1 [68.8 kB]
+Get:48 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libalgorithm-diff-perl all 1.201-1 [41.8 kB]
+Get:49 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libalgorithm-diff-xs-perl amd64 0.04-9 [11.3 kB]
+Get:50 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libalgorithm-merge-perl all 0.08-5 [11.4 kB]
+Get:51 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libhtml-tagset-perl all 3.24-1 [14.1 kB]
+Get:52 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 liburi-perl all 5.34-2build1 [100 kB]
+Get:53 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libhtml-parser-perl amd64 3.83-1build1 [86.4 kB]
+Get:54 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libcgi-pm-perl all 4.71-1build1 [185 kB]
+Get:55 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libfcgi0t64 amd64 2.4.5-0.1build2 [28.0 kB]
+Get:56 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libfcgi-perl amd64 0.82+ds-3build3 [21.9 kB]
+Get:57 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libcgi-fast-perl all 1:2.17-1 [10.3 kB]
+Get:58 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libclone-perl amd64 0.47-1 [10.8 kB]
+Get:59 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libencode-locale-perl all 1.05-3 [11.6 kB]
+Get:60 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libexpat1-dev amd64 2.7.4-1 [1051 kB]
+Get:61 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libfcgi-bin amd64 2.4.5-0.1build2 [12.2 kB]
+Get:62 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libfile-fcntllock-perl amd64 0.22-4ubuntu6 [32.8 kB]
+Get:63 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libhtml-template-perl all 2.97-2build1 [58.3 kB]
+Get:64 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libtimedate-perl all 2.3300-2 [34.0 kB]
+Get:65 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libhttp-date-perl all 6.06-1 [10.2 kB]
+Get:66 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libio-html-perl all 1.004-3 [15.9 kB]
+Get:67 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 liblwp-mediatypes-perl all 6.04-2 [20.1 kB]
+Get:68 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libhttp-message-perl all 7.01-1ubuntu1 [76.1 kB]
+Get:69 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 zlib1g-dev amd64 1:1.3.dfsg+really1.3.1-1ubuntu3 [897 kB]
+Get:70 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libpython3.14-dev amd64 3.14.4-1 [6107 kB]
+Get:71 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 libpython3-dev amd64 3.14.3-0ubuntu2 [8750 B]
+Get:72 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 manpages-dev all 6.17-1 [2183 kB]
+Get:73 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 net-tools amd64 2.10-2ubuntu1 [152 kB]
+Get:74 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 nginx-common all 1.28.3-2ubuntu1.5 [37.2 kB]
+Get:75 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute-updates/main amd64v3 nginx amd64 1.28.3-2ubuntu1.5 [627 kB]
+Get:76 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 python3.14-dev amd64 3.14.4-1 [512 kB]
+Get:77 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/main amd64v3 python3-dev amd64 3.14.3-0ubuntu2 [26.6 kB]
+Get:78 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/universe amd64v3 python3-wheel all 0.46.3-2 [27.9 kB]
+Get:79 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/universe amd64v3 python3-pip all 25.1.1+dfsg-1ubuntu2 [1416 kB]
+Get:80 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/universe amd64v3 python3-pip-whl all 25.1.1+dfsg-1ubuntu2 [1430 kB]
+Get:81 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/universe amd64v3 python3-setuptools-whl all 78.1.1-0.1build1 [1174 kB]
+Get:82 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/universe amd64v3 python3.14-venv amd64 3.14.4-1 [5350 B]
+Get:83 http://ap-southeast-2.ec2.archive.ubuntu.com/ubuntu resolute/universe amd64v3 python3-venv amd64 3.14.3-0ubuntu2 [1044 B]
+Fetched 117 MB in 2s (59.3 MB/s)
+Extracting templates from packages: 100%
+Preconfiguring packages ...
+Selecting previously unselected package mysql-common.
+(Reading database ... 85280 files and directories currently installed.)
+Preparing to unpack .../0-mysql-common_5.8+1.1.1ubuntu2_all.deb ...
+Unpacking mysql-common (5.8+1.1.1ubuntu2) ...
+Selecting previously unselected package libtcmalloc-minimal4t64:amd64.
+Preparing to unpack .../1-libtcmalloc-minimal4t64_2.18.1-1_amd64v3.deb ...
+Unpacking libtcmalloc-minimal4t64:amd64 (2.18.1-1) ...
+Selecting previously unselected package libgoogle-perftools4t64:amd64.
+Preparing to unpack .../2-libgoogle-perftools4t64_2.18.1-1_amd64v3.deb ...
+Unpacking libgoogle-perftools4t64:amd64 (2.18.1-1) ...
+Selecting previously unselected package mysql-client-core.
+Preparing to unpack .../3-mysql-client-core_8.4.9-0ubuntu0.26.04.1_amd64v3.deb ...
+Unpacking mysql-client-core (8.4.9-0ubuntu0.26.04.1) ...
+Selecting previously unselected package mysql-client.
+Preparing to unpack .../4-mysql-client_8.4.9-0ubuntu0.26.04.1_amd64v3.deb ...
+Unpacking mysql-client (8.4.9-0ubuntu0.26.04.1) ...
+Selecting previously unselected package libmecab2:amd64.
+Preparing to unpack .../5-libmecab2_0.996-15.1build4_amd64v3.deb ...
+Unpacking libmecab2:amd64 (0.996-15.1build4) ...
+Selecting previously unselected package libprotobuf-lite32t64:amd64.
+Preparing to unpack .../6-libprotobuf-lite32t64_3.21.12-15ubuntu1_amd64v3.deb ...
+Unpacking libprotobuf-lite32t64:amd64 (3.21.12-15ubuntu1) ...
+Selecting previously unselected package mysql-server-core.
+Preparing to unpack .../7-mysql-server-core_8.4.9-0ubuntu0.26.04.1_amd64v3.deb ...
+Unpacking mysql-server-core (8.4.9-0ubuntu0.26.04.1) ...
+Setting up mysql-common (5.8+1.1.1ubuntu2) ...
+update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Selecting previously unselected package mysql-server.
+(Reading database ... 85499 files and directories currently installed.)
+Preparing to unpack .../00-mysql-server_8.4.9-0ubuntu0.26.04.1_amd64v3.deb ...
+Unpacking mysql-server (8.4.9-0ubuntu0.26.04.1) ...
+Selecting previously unselected package libc-dev-bin.
+Preparing to unpack .../01-libc-dev-bin_2.43-2ubuntu2_amd64v3.deb ...
+Unpacking libc-dev-bin (2.43-2ubuntu2) ...
+Selecting previously unselected package linux-libc-dev:amd64.
+Preparing to unpack .../02-linux-libc-dev_7.0.0-22.22_amd64.deb ...
+Unpacking linux-libc-dev:amd64 (7.0.0-22.22) ...
+Selecting previously unselected package rpcsvc-proto.
+Preparing to unpack .../03-rpcsvc-proto_1.4.3-1build1_amd64v3.deb ...
+Unpacking rpcsvc-proto (1.4.3-1build1) ...
+Selecting previously unselected package libc6-dev:amd64.
+Preparing to unpack .../04-libc6-dev_2.43-2ubuntu2_amd64v3.deb ...
+Unpacking libc6-dev:amd64 (2.43-2ubuntu2) ...
+Selecting previously unselected package gcc-15-base:amd64.
+Preparing to unpack .../05-gcc-15-base_15.2.0-16ubuntu1_amd64v3.deb ...
+Unpacking gcc-15-base:amd64 (15.2.0-16ubuntu1) ...
+Selecting previously unselected package libisl23:amd64.
+Preparing to unpack .../06-libisl23_0.27-1build1_amd64v3.deb ...
+Unpacking libisl23:amd64 (0.27-1build1) ...
+Selecting previously unselected package libmpc3:amd64.
+Preparing to unpack .../07-libmpc3_1.3.1-3_amd64v3.deb ...
+Unpacking libmpc3:amd64 (1.3.1-3) ...
+Selecting previously unselected package cpp-15-x86-64-linux-gnu.
+Preparing to unpack .../08-cpp-15-x86-64-linux-gnu_15.2.0-16ubuntu1_amd64v3.deb ...
+Unpacking cpp-15-x86-64-linux-gnu (15.2.0-16ubuntu1) ...
+Selecting previously unselected package cpp-15.
+Preparing to unpack .../09-cpp-15_15.2.0-16ubuntu1_amd64v3.deb ...
+Unpacking cpp-15 (15.2.0-16ubuntu1) ...
+Selecting previously unselected package cpp-x86-64-linux-gnu.
+Preparing to unpack .../10-cpp-x86-64-linux-gnu_4%3a15.2.0-5ubuntu1_amd64v3.deb ...
+Unpacking cpp-x86-64-linux-gnu (4:15.2.0-5ubuntu1) ...
+Selecting previously unselected package cpp.
+Preparing to unpack .../11-cpp_4%3a15.2.0-5ubuntu1_amd64v3.deb ...
+Unpacking cpp (4:15.2.0-5ubuntu1) ...
+Selecting previously unselected package libcc1-0:amd64.
+Preparing to unpack .../12-libcc1-0_16-20260322-1ubuntu1_amd64v3.deb ...
+Unpacking libcc1-0:amd64 (16-20260322-1ubuntu1) ...
+Selecting previously unselected package libgomp1:amd64.
+Preparing to unpack .../13-libgomp1_16-20260322-1ubuntu1_amd64v3.deb ...
+Unpacking libgomp1:amd64 (16-20260322-1ubuntu1) ...
+Selecting previously unselected package libitm1:amd64.
+Preparing to unpack .../14-libitm1_16-20260322-1ubuntu1_amd64v3.deb ...
+Unpacking libitm1:amd64 (16-20260322-1ubuntu1) ...
+Selecting previously unselected package libasan8:amd64.
+Preparing to unpack .../15-libasan8_16-20260322-1ubuntu1_amd64v3.deb ...
+Unpacking libasan8:amd64 (16-20260322-1ubuntu1) ...
+Selecting previously unselected package liblsan0:amd64.
+Preparing to unpack .../16-liblsan0_16-20260322-1ubuntu1_amd64v3.deb ...
+Unpacking liblsan0:amd64 (16-20260322-1ubuntu1) ...
+Selecting previously unselected package libtsan2:amd64.
+Preparing to unpack .../17-libtsan2_16-20260322-1ubuntu1_amd64v3.deb ...
+Unpacking libtsan2:amd64 (16-20260322-1ubuntu1) ...
+Selecting previously unselected package libubsan1:amd64.
+Preparing to unpack .../18-libubsan1_16-20260322-1ubuntu1_amd64v3.deb ...
+Unpacking libubsan1:amd64 (16-20260322-1ubuntu1) ...
+Selecting previously unselected package libhwasan0:amd64.
+Preparing to unpack .../19-libhwasan0_16-20260322-1ubuntu1_amd64v3.deb ...
+Unpacking libhwasan0:amd64 (16-20260322-1ubuntu1) ...
+Selecting previously unselected package libquadmath0:amd64.
+Preparing to unpack .../20-libquadmath0_16-20260322-1ubuntu1_amd64v3.deb ...
+Unpacking libquadmath0:amd64 (16-20260322-1ubuntu1) ...
+Selecting previously unselected package libgcc-15-dev:amd64.
+Preparing to unpack .../21-libgcc-15-dev_15.2.0-16ubuntu1_amd64v3.deb ...
+Unpacking libgcc-15-dev:amd64 (15.2.0-16ubuntu1) ...
+Selecting previously unselected package gcc-15-x86-64-linux-gnu.
+Preparing to unpack .../22-gcc-15-x86-64-linux-gnu_15.2.0-16ubuntu1_amd64v3.deb ...
+Unpacking gcc-15-x86-64-linux-gnu (15.2.0-16ubuntu1) ...
+Selecting previously unselected package gcc-15.
+Preparing to unpack .../23-gcc-15_15.2.0-16ubuntu1_amd64v3.deb ...
+Unpacking gcc-15 (15.2.0-16ubuntu1) ...
+Selecting previously unselected package gcc-x86-64-linux-gnu.
+Preparing to unpack .../24-gcc-x86-64-linux-gnu_4%3a15.2.0-5ubuntu1_amd64v3.deb ...
+Unpacking gcc-x86-64-linux-gnu (4:15.2.0-5ubuntu1) ...
+Selecting previously unselected package gcc.
+Preparing to unpack .../25-gcc_4%3a15.2.0-5ubuntu1_amd64v3.deb ...
+Unpacking gcc (4:15.2.0-5ubuntu1) ...
+Selecting previously unselected package libstdc++-15-dev:amd64.
+Preparing to unpack .../26-libstdc++-15-dev_15.2.0-16ubuntu1_amd64v3.deb ...
+Unpacking libstdc++-15-dev:amd64 (15.2.0-16ubuntu1) ...
+Selecting previously unselected package g++-15-x86-64-linux-gnu.
+Preparing to unpack .../27-g++-15-x86-64-linux-gnu_15.2.0-16ubuntu1_amd64v3.deb ...
+Unpacking g++-15-x86-64-linux-gnu (15.2.0-16ubuntu1) ...
+Selecting previously unselected package g++-15.
+Preparing to unpack .../28-g++-15_15.2.0-16ubuntu1_amd64v3.deb ...
+Unpacking g++-15 (15.2.0-16ubuntu1) ...
+Selecting previously unselected package g++-x86-64-linux-gnu.
+Preparing to unpack .../29-g++-x86-64-linux-gnu_4%3a15.2.0-5ubuntu1_amd64v3.deb ...
+Unpacking g++-x86-64-linux-gnu (4:15.2.0-5ubuntu1) ...
+Selecting previously unselected package g++.
+Preparing to unpack .../30-g++_4%3a15.2.0-5ubuntu1_amd64v3.deb ...
+Unpacking g++ (4:15.2.0-5ubuntu1) ...
+Selecting previously unselected package make.
+Preparing to unpack .../31-make_4.4.1-3_amd64v3.deb ...
+Unpacking make (4.4.1-3) ...
+Selecting previously unselected package libdpkg-perl.
+Preparing to unpack .../32-libdpkg-perl_1.23.7ubuntu1_all.deb ...
+Unpacking libdpkg-perl (1.23.7ubuntu1) ...
+Selecting previously unselected package bzip2.
+Preparing to unpack .../33-bzip2_1.0.8-6build2_amd64v3.deb ...
+Unpacking bzip2 (1.0.8-6build2) ...
+Selecting previously unselected package lto-disabled-list.
+Preparing to unpack .../34-lto-disabled-list_79_all.deb ...
+Unpacking lto-disabled-list (79) ...
+Selecting previously unselected package dpkg-dev.
+Preparing to unpack .../35-dpkg-dev_1.23.7ubuntu1_all.deb ...
+Unpacking dpkg-dev (1.23.7ubuntu1) ...
+Selecting previously unselected package build-essential.
+Preparing to unpack .../36-build-essential_12.12ubuntu2_amd64v3.deb ...
+Unpacking build-essential (12.12ubuntu2) ...
+Selecting previously unselected package libfakeroot:amd64.
+Preparing to unpack .../37-libfakeroot_1.37.2-1_amd64v3.deb ...
+Unpacking libfakeroot:amd64 (1.37.2-1) ...
+Selecting previously unselected package fakeroot.
+Preparing to unpack .../38-fakeroot_1.37.2-1_amd64v3.deb ...
+Unpacking fakeroot (1.37.2-1) ...
+Selecting previously unselected package libalgorithm-diff-perl.
+Preparing to unpack .../39-libalgorithm-diff-perl_1.201-1_all.deb ...
+Unpacking libalgorithm-diff-perl (1.201-1) ...
+Selecting previously unselected package libalgorithm-diff-xs-perl.
+Preparing to unpack .../40-libalgorithm-diff-xs-perl_0.04-9_amd64v3.deb ...
+Unpacking libalgorithm-diff-xs-perl (0.04-9) ...
+Selecting previously unselected package libalgorithm-merge-perl.
+Preparing to unpack .../41-libalgorithm-merge-perl_0.08-5_all.deb ...
+Unpacking libalgorithm-merge-perl (0.08-5) ...
+Selecting previously unselected package libhtml-tagset-perl.
+Preparing to unpack .../42-libhtml-tagset-perl_3.24-1_all.deb ...
+Unpacking libhtml-tagset-perl (3.24-1) ...
+Selecting previously unselected package liburi-perl.
+Preparing to unpack .../43-liburi-perl_5.34-2build1_all.deb ...
+Unpacking liburi-perl (5.34-2build1) ...
+Selecting previously unselected package libhtml-parser-perl:amd64.
+Preparing to unpack .../44-libhtml-parser-perl_3.83-1build1_amd64v3.deb ...
+Unpacking libhtml-parser-perl:amd64 (3.83-1build1) ...
+Selecting previously unselected package libcgi-pm-perl.
+Preparing to unpack .../45-libcgi-pm-perl_4.71-1build1_all.deb ...
+Unpacking libcgi-pm-perl (4.71-1build1) ...
+Selecting previously unselected package libfcgi0t64:amd64.
+Preparing to unpack .../46-libfcgi0t64_2.4.5-0.1build2_amd64v3.deb ...
+Unpacking libfcgi0t64:amd64 (2.4.5-0.1build2) ...
+Selecting previously unselected package libfcgi-perl.
+Preparing to unpack .../47-libfcgi-perl_0.82+ds-3build3_amd64v3.deb ...
+Unpacking libfcgi-perl (0.82+ds-3build3) ...
+Selecting previously unselected package libcgi-fast-perl.
+Preparing to unpack .../48-libcgi-fast-perl_1%3a2.17-1_all.deb ...
+Unpacking libcgi-fast-perl (1:2.17-1) ...
+Selecting previously unselected package libclone-perl:amd64.
+Preparing to unpack .../49-libclone-perl_0.47-1_amd64v3.deb ...
+Unpacking libclone-perl:amd64 (0.47-1) ...
+Selecting previously unselected package libencode-locale-perl.
+Preparing to unpack .../50-libencode-locale-perl_1.05-3_all.deb ...
+Unpacking libencode-locale-perl (1.05-3) ...
+Selecting previously unselected package libexpat1-dev:amd64.
+Preparing to unpack .../51-libexpat1-dev_2.7.4-1_amd64v3.deb ...
+Unpacking libexpat1-dev:amd64 (2.7.4-1) ...
+Selecting previously unselected package libfcgi-bin.
+Preparing to unpack .../52-libfcgi-bin_2.4.5-0.1build2_amd64v3.deb ...
+Unpacking libfcgi-bin (2.4.5-0.1build2) ...
+Selecting previously unselected package libfile-fcntllock-perl.
+Preparing to unpack .../53-libfile-fcntllock-perl_0.22-4ubuntu6_amd64v3.deb ...
+Unpacking libfile-fcntllock-perl (0.22-4ubuntu6) ...
+Selecting previously unselected package libhtml-template-perl.
+Preparing to unpack .../54-libhtml-template-perl_2.97-2build1_all.deb ...
+Unpacking libhtml-template-perl (2.97-2build1) ...
+Selecting previously unselected package libtimedate-perl.
+Preparing to unpack .../55-libtimedate-perl_2.3300-2_all.deb ...
+Unpacking libtimedate-perl (2.3300-2) ...
+Selecting previously unselected package libhttp-date-perl.
+Preparing to unpack .../56-libhttp-date-perl_6.06-1_all.deb ...
+Unpacking libhttp-date-perl (6.06-1) ...
+Selecting previously unselected package libio-html-perl.
+Preparing to unpack .../57-libio-html-perl_1.004-3_all.deb ...
+Unpacking libio-html-perl (1.004-3) ...
+Selecting previously unselected package liblwp-mediatypes-perl.
+Preparing to unpack .../58-liblwp-mediatypes-perl_6.04-2_all.deb ...
+Unpacking liblwp-mediatypes-perl (6.04-2) ...
+Selecting previously unselected package libhttp-message-perl.
+Preparing to unpack .../59-libhttp-message-perl_7.01-1ubuntu1_all.deb ...
+Unpacking libhttp-message-perl (7.01-1ubuntu1) ...
+Selecting previously unselected package zlib1g-dev:amd64.
+Preparing to unpack .../60-zlib1g-dev_1%3a1.3.dfsg+really1.3.1-1ubuntu3_amd64v3.deb ...
+Unpacking zlib1g-dev:amd64 (1:1.3.dfsg+really1.3.1-1ubuntu3) ...
+Selecting previously unselected package libpython3.14-dev:amd64.
+Preparing to unpack .../61-libpython3.14-dev_3.14.4-1_amd64v3.deb ...
+Unpacking libpython3.14-dev:amd64 (3.14.4-1) ...
+Selecting previously unselected package libpython3-dev:amd64.
+Preparing to unpack .../62-libpython3-dev_3.14.3-0ubuntu2_amd64v3.deb ...
+Unpacking libpython3-dev:amd64 (3.14.3-0ubuntu2) ...
+Selecting previously unselected package manpages-dev.
+Preparing to unpack .../63-manpages-dev_6.17-1_all.deb ...
+Unpacking manpages-dev (6.17-1) ...
+Selecting previously unselected package net-tools.
+Preparing to unpack .../64-net-tools_2.10-2ubuntu1_amd64v3.deb ...
+Unpacking net-tools (2.10-2ubuntu1) ...
+Selecting previously unselected package nginx-common.
+Preparing to unpack .../65-nginx-common_1.28.3-2ubuntu1.5_all.deb ...
+Unpacking nginx-common (1.28.3-2ubuntu1.5) ...
+Selecting previously unselected package nginx.
+Preparing to unpack .../66-nginx_1.28.3-2ubuntu1.5_amd64v3.deb ...
+Unpacking nginx (1.28.3-2ubuntu1.5) ...
+Selecting previously unselected package python3.14-dev.
+Preparing to unpack .../67-python3.14-dev_3.14.4-1_amd64v3.deb ...
+Unpacking python3.14-dev (3.14.4-1) ...
+Selecting previously unselected package python3-dev.
+Preparing to unpack .../68-python3-dev_3.14.3-0ubuntu2_amd64v3.deb ...
+Unpacking python3-dev (3.14.3-0ubuntu2) ...
+Selecting previously unselected package python3-wheel.
+Preparing to unpack .../69-python3-wheel_0.46.3-2_all.deb ...
+Unpacking python3-wheel (0.46.3-2) ...
+Selecting previously unselected package python3-pip.
+Preparing to unpack .../70-python3-pip_25.1.1+dfsg-1ubuntu2_all.deb ...
+Unpacking python3-pip (25.1.1+dfsg-1ubuntu2) ...
+Selecting previously unselected package python3-pip-whl.
+Preparing to unpack .../71-python3-pip-whl_25.1.1+dfsg-1ubuntu2_all.deb ...
+Unpacking python3-pip-whl (25.1.1+dfsg-1ubuntu2) ...
+Selecting previously unselected package python3-setuptools-whl.
+Preparing to unpack .../72-python3-setuptools-whl_78.1.1-0.1build1_all.deb ...
+Unpacking python3-setuptools-whl (78.1.1-0.1build1) ...
+Selecting previously unselected package python3.14-venv.
+Preparing to unpack .../73-python3.14-venv_3.14.4-1_amd64v3.deb ...
+Unpacking python3.14-venv (3.14.4-1) ...
+Selecting previously unselected package python3-venv.
+Preparing to unpack .../74-python3-venv_3.14.3-0ubuntu2_amd64v3.deb ...
+Unpacking python3-venv (3.14.3-0ubuntu2) ...
+Setting up libprotobuf-lite32t64:amd64 (3.21.12-15ubuntu1) ...
+Setting up manpages-dev (6.17-1) ...
+Setting up libmecab2:amd64 (0.996-15.1build4) ...
+Setting up net-tools (2.10-2ubuntu1) ...
+Setting up python3-setuptools-whl (78.1.1-0.1build1) ...
+Setting up lto-disabled-list (79) ...
+Setting up libfile-fcntllock-perl (0.22-4ubuntu6) ...
+Setting up python3-pip-whl (25.1.1+dfsg-1ubuntu2) ...
+Setting up libclone-perl:amd64 (0.47-1) ...
+Setting up libalgorithm-diff-perl (1.201-1) ...
+Setting up libfcgi0t64:amd64 (2.4.5-0.1build2) ...
+Setting up libhtml-tagset-perl (3.24-1) ...
+Setting up liblwp-mediatypes-perl (6.04-2) ...
+Setting up libfcgi-bin (2.4.5-0.1build2) ...
+Setting up linux-libc-dev:amd64 (7.0.0-22.22) ...
+Setting up nginx-common (1.28.3-2ubuntu1.5) ...
+Created symlink '/etc/systemd/system/multi-user.target.wants/nginx.service' → '/usr/lib/systemd/system/nginx.service'.
+Setting up libencode-locale-perl (1.05-3) ...
+Setting up libgomp1:amd64 (16-20260322-1ubuntu1) ...
+Setting up bzip2 (1.0.8-6build2) ...
+Setting up python3-wheel (0.46.3-2) ...
+Setting up libfakeroot:amd64 (1.37.2-1) ...
+Setting up python3.14-venv (3.14.4-1) ...
+Setting up fakeroot (1.37.2-1) ...
+update-alternatives: using /usr/bin/fakeroot-sysv to provide /usr/bin/fakeroot (fakeroot) in auto mode
+Setting up rpcsvc-proto (1.4.3-1build1) ...
+Setting up python3-venv (3.14.3-0ubuntu2) ...
+Setting up make (4.4.1-3) ...
+Setting up libquadmath0:amd64 (16-20260322-1ubuntu1) ...
+Setting up libmpc3:amd64 (1.3.1-3) ...
+Setting up libio-html-perl (1.004-3) ...
+Setting up libtcmalloc-minimal4t64:amd64 (2.18.1-1) ...
+Setting up python3-pip (25.1.1+dfsg-1ubuntu2) ...
+Setting up libdpkg-perl (1.23.7ubuntu1) ...
+Setting up libtimedate-perl (2.3300-2) ...
+Setting up libubsan1:amd64 (16-20260322-1ubuntu1) ...
+Setting up libhwasan0:amd64 (16-20260322-1ubuntu1) ...
+Setting up libasan8:amd64 (16-20260322-1ubuntu1) ...
+Setting up libfcgi-perl (0.82+ds-3build3) ...
+Setting up libtsan2:amd64 (16-20260322-1ubuntu1) ...
+Setting up libisl23:amd64 (0.27-1build1) ...
+Setting up libc-dev-bin (2.43-2ubuntu2) ...
+Setting up gcc-15-base:amd64 (15.2.0-16ubuntu1) ...
+Setting up libalgorithm-diff-xs-perl (0.04-9) ...
+Setting up libcc1-0:amd64 (16-20260322-1ubuntu1) ...
+Setting up liburi-perl (5.34-2build1) ...
+Setting up liblsan0:amd64 (16-20260322-1ubuntu1) ...
+Setting up libitm1:amd64 (16-20260322-1ubuntu1) ...
+Setting up libalgorithm-merge-perl (0.08-5) ...
+Setting up libhttp-date-perl (6.06-1) ...
+Setting up libgcc-15-dev:amd64 (15.2.0-16ubuntu1) ...
+Setting up libgoogle-perftools4t64:amd64 (2.18.1-1) ...
+Setting up nginx (1.28.3-2ubuntu1.5) ...
+ * Upgrading binary nginx                                                                                                                            [ OK ]
+Setting up cpp-15-x86-64-linux-gnu (15.2.0-16ubuntu1) ...
+Setting up dpkg-dev (1.23.7ubuntu1) ...
+Setting up gcc-15-x86-64-linux-gnu (15.2.0-16ubuntu1) ...
+Setting up mysql-server-core (8.4.9-0ubuntu0.26.04.1) ...
+Setting up mysql-client-core (8.4.9-0ubuntu0.26.04.1) ...
+Setting up cpp-15 (15.2.0-16ubuntu1) ...
+Setting up libhtml-parser-perl:amd64 (3.83-1build1) ...
+Setting up libc6-dev:amd64 (2.43-2ubuntu2) ...
+Setting up libhttp-message-perl (7.01-1ubuntu1) ...
+Setting up cpp-x86-64-linux-gnu (4:15.2.0-5ubuntu1) ...
+Setting up mysql-client (8.4.9-0ubuntu0.26.04.1) ...
+Setting up gcc-x86-64-linux-gnu (4:15.2.0-5ubuntu1) ...
+Setting up libcgi-pm-perl (4.71-1build1) ...
+Setting up libhtml-template-perl (2.97-2build1) ...
+Setting up gcc-15 (15.2.0-16ubuntu1) ...
+Setting up libstdc++-15-dev:amd64 (15.2.0-16ubuntu1) ...
+Setting up libexpat1-dev:amd64 (2.7.4-1) ...
+Setting up zlib1g-dev:amd64 (1:1.3.dfsg+really1.3.1-1ubuntu3) ...
+Setting up cpp (4:15.2.0-5ubuntu1) ...
+Setting up libpython3.14-dev:amd64 (3.14.4-1) ...
+Setting up mysql-server (8.4.9-0ubuntu0.26.04.1) ...
+update-alternatives: using /etc/mysql/mysql.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Renaming removed key_buffer and myisam-recover options (if present)
+Created symlink '/etc/systemd/system/multi-user.target.wants/mysql.service' → '/usr/lib/systemd/system/mysql.service'.
+Setting up g++-15-x86-64-linux-gnu (15.2.0-16ubuntu1) ...
+Setting up libpython3-dev:amd64 (3.14.3-0ubuntu2) ...
+Setting up python3.14-dev (3.14.4-1) ...
+Setting up libcgi-fast-perl (1:2.17-1) ...
+Setting up gcc (4:15.2.0-5ubuntu1) ...
+Setting up python3-dev (3.14.3-0ubuntu2) ...
+Setting up g++-x86-64-linux-gnu (4:15.2.0-5ubuntu1) ...
+Setting up g++-15 (15.2.0-16ubuntu1) ...
+Setting up g++ (4:15.2.0-5ubuntu1) ...
+update-alternatives: using /usr/bin/g++ to provide /usr/bin/c++ (c++) in auto mode
+Setting up build-essential (12.12ubuntu2) ...
+Processing triggers for ufw (0.36.2-9build1) ...
+Processing triggers for man-db (2.13.1-1build1) ...
+Processing triggers for libc-bin (2.43-2ubuntu2) ...
+Scanning processes...
+Scanning candidates...
+Scanning linux images...
+
+Running kernel seems to be up-to-date.
+
+Restarting services...
+
+Service restarts being deferred:
+ systemctl restart networkd-dispatcher.service
+ systemctl restart systemd-logind.service
+ systemctl restart unattended-upgrades.service
+
+No containers need to be restarted.
+
+User sessions running outdated binaries:
+ ubuntu @ session #1: sshd-session[1154]
+ ubuntu @ user manager: (sd-pam)[1161]
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+htop: invalid option -- 'y'
+ubuntu@ip-172-31-21-107:~$ Connection reset by 15.134.221.0 port 22
+
+(ecommerceprj) C:\Users\bobba\Desktop\Flask_classwork\ecommerce2728>
+
+(ecommerceprj) C:\Users\bobba\Desktop\Flask_classwork\ecommerce2728>ubuntu
+'ubuntu' is not recognized as an internal or external command,
+operable program or batch file.
+
+(ecommerceprj) C:\Users\bobba\Desktop\Flask_classwork\ecommerce2728>ssh -i "C:\Users\bobba\Downloads\ecom2728.pem" ubuntu@15.134.221.0
+Welcome to Ubuntu 26.04 LTS (GNU/Linux 7.0.0-1006-aws x86_64)
+
+ * Documentation:  https://docs.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Sat Jun 20 06:58:21 UTC 2026
+
+  System load:  0.08              Temperature:           -273.1 C
+  Usage of /:   44.2% of 6.61GB   Processes:             121
+  Memory usage: 80%               Users logged in:       0
+  Swap usage:   0%                IPv4 address for ens5: 172.31.21.107
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+2 additional security updates can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+
+Last login: Sat Jun 20 06:36:00 2026 from 49.205.105.29
+ubuntu@ip-172-31-21-107:~$ ^C
+ubuntu@ip-172-31-21-107:~$ git clone https://github.com/bobbadilakshmi10-cmyk/Ecommerce.git
+Cloning into 'Ecommerce'...
+remote: Enumerating objects: 40, done.
+remote: Counting objects: 100% (40/40), done.
+remote: Compressing objects: 100% (22/22), done.
+remote: Total 40 (delta 16), reused 40 (delta 16), pack-reused 0 (from 0)
+Receiving objects: 100% (40/40), 253.69 KiB | 15.86 MiB/s, done.
+Resolving deltas: 100% (16/16), done.
+ubuntu@ip-172-31-21-107:~$ cd Ecommerce
+ubuntu@ip-172-31-21-107:~/Ecommerce$ python3 -m venv venv
+ubuntu@ip-172-31-21-107:~/Ecommerce$ source venv/bin/activate
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ sudo mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.4.9-0ubuntu0.26.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2026, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> CREATE DATABASE ecomdb;
+Query OK, 1 row affected (0.07 sec)
+
+mysql> CREATE USER 'flaskuser'@'localhost'
+    -> IDENTIFIED BY 'password';
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> GRANT ALL PRIVILEGES
+    -> ON flaskdb.*
+    -> TO 'flaskuser'@'localhost';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> EXIT;
+Bye
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ python app.py
+Traceback (most recent call last):
+  File "/home/ubuntu/Ecommerce/app.py", line 1, in <module>
+    from flask import Flask,request,redirect,url_for,jsonify,session,make_response
+ModuleNotFoundError: No module named 'flask'
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ python app.py
+Traceback (most recent call last):
+  File "/home/ubuntu/Ecommerce/app.py", line 1, in <module>
+    from flask import Flask,request,redirect,url_for,jsonify,session,make_response
+ModuleNotFoundError: No module named 'flask'
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ python app.py
+Traceback (most recent call last):
+  File "/home/ubuntu/Ecommerce/app.py", line 1, in <module>
+    from flask import Flask,request,redirect,url_for,jsonify,session,make_response
+ModuleNotFoundError: No module named 'flask'
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ python fapp.py
+python: can't open file '/home/ubuntu/Ecommerce/fapp.py': [Errno 2] No such file or directory
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ python app.py
+Traceback (most recent call last):
+  File "/home/ubuntu/Ecommerce/app.py", line 1, in <module>
+    from flask import Flask,request,redirect,url_for,jsonify,session,make_response
+ModuleNotFoundError: No module named 'flask'
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ pip install flask
+Collecting flask
+  Downloading flask-3.1.3-py3-none-any.whl.metadata (3.2 kB)
+Collecting blinker>=1.9.0 (from flask)
+  Downloading blinker-1.9.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting click>=8.1.3 (from flask)
+  Downloading click-8.4.1-py3-none-any.whl.metadata (2.6 kB)
+Collecting itsdangerous>=2.2.0 (from flask)
+  Downloading itsdangerous-2.2.0-py3-none-any.whl.metadata (1.9 kB)
+Collecting jinja2>=3.1.2 (from flask)
+  Downloading jinja2-3.1.6-py3-none-any.whl.metadata (2.9 kB)
+Collecting markupsafe>=2.1.1 (from flask)
+  Downloading markupsafe-3.0.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (2.7 kB)
+Collecting werkzeug>=3.1.0 (from flask)
+  Downloading werkzeug-3.1.8-py3-none-any.whl.metadata (4.0 kB)
+Downloading flask-3.1.3-py3-none-any.whl (103 kB)
+Downloading blinker-1.9.0-py3-none-any.whl (8.5 kB)
+Downloading click-8.4.1-py3-none-any.whl (116 kB)
+Downloading itsdangerous-2.2.0-py3-none-any.whl (16 kB)
+Downloading jinja2-3.1.6-py3-none-any.whl (134 kB)
+Downloading markupsafe-3.0.3-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (23 kB)
+Downloading werkzeug-3.1.8-py3-none-any.whl (226 kB)
+Installing collected packages: markupsafe, itsdangerous, click, blinker, werkzeug, jinja2, flask
+Successfully installed blinker-1.9.0 click-8.4.1 flask-3.1.3 itsdangerous-2.2.0 jinja2-3.1.6 markupsafe-3.0.3 werkzeug-3.1.8
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ python app.py
+Traceback (most recent call last):
+  File "/home/ubuntu/Ecommerce/app.py", line 2, in <module>
+    from flask_cors import CORS
+ModuleNotFoundError: No module named 'flask_cors'
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ pip install flask_cors
+Collecting flask_cors
+  Downloading flask_cors-6.0.5-py3-none-any.whl.metadata (5.4 kB)
+Requirement already satisfied: flask>=0.9 in ./venv/lib/python3.14/site-packages (from flask_cors) (3.1.3)
+Requirement already satisfied: Werkzeug>=0.7 in ./venv/lib/python3.14/site-packages (from flask_cors) (3.1.8)
+Requirement already satisfied: blinker>=1.9.0 in ./venv/lib/python3.14/site-packages (from flask>=0.9->flask_cors) (1.9.0)
+Requirement already satisfied: click>=8.1.3 in ./venv/lib/python3.14/site-packages (from flask>=0.9->flask_cors) (8.4.1)
+Requirement already satisfied: itsdangerous>=2.2.0 in ./venv/lib/python3.14/site-packages (from flask>=0.9->flask_cors) (2.2.0)
+Requirement already satisfied: jinja2>=3.1.2 in ./venv/lib/python3.14/site-packages (from flask>=0.9->flask_cors) (3.1.6)
+Requirement already satisfied: markupsafe>=2.1.1 in ./venv/lib/python3.14/site-packages (from flask>=0.9->flask_cors) (3.0.3)
+Downloading flask_cors-6.0.5-py3-none-any.whl (16 kB)
+Installing collected packages: flask_cors
+Successfully installed flask_cors-6.0.5
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ python app.py
+Traceback (most recent call last):
+  File "/home/ubuntu/Ecommerce/app.py", line 4, in <module>
+    from flask_session import Session #security layer
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ImportError: cannot import name 'Session' from 'flask_session' (unknown location)
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ pip install flask_session
+Collecting flask_session
+  Downloading flask_session-0.8.0-py3-none-any.whl.metadata (5.2 kB)
+Requirement already satisfied: flask>=2.2 in ./venv/lib/python3.14/site-packages (from flask_session) (3.1.3)
+Collecting msgspec>=0.18.6 (from flask_session)
+  Downloading msgspec-0.21.1-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (5.8 kB)
+Collecting cachelib (from flask_session)
+  Downloading cachelib-0.14.0-py3-none-any.whl.metadata (1.4 kB)
+Requirement already satisfied: blinker>=1.9.0 in ./venv/lib/python3.14/site-packages (from flask>=2.2->flask_session) (1.9.0)
+Requirement already satisfied: click>=8.1.3 in ./venv/lib/python3.14/site-packages (from flask>=2.2->flask_session) (8.4.1)
+Requirement already satisfied: itsdangerous>=2.2.0 in ./venv/lib/python3.14/site-packages (from flask>=2.2->flask_session) (2.2.0)
+Requirement already satisfied: jinja2>=3.1.2 in ./venv/lib/python3.14/site-packages (from flask>=2.2->flask_session) (3.1.6)
+Requirement already satisfied: markupsafe>=2.1.1 in ./venv/lib/python3.14/site-packages (from flask>=2.2->flask_session) (3.0.3)
+Requirement already satisfied: werkzeug>=3.1.0 in ./venv/lib/python3.14/site-packages (from flask>=2.2->flask_session) (3.1.8)
+Downloading flask_session-0.8.0-py3-none-any.whl (24 kB)
+Downloading msgspec-0.21.1-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (224 kB)
+Downloading cachelib-0.14.0-py3-none-any.whl (22 kB)
+Installing collected packages: msgspec, cachelib, flask_session
+Successfully installed cachelib-0.14.0 flask_session-0.8.0 msgspec-0.21.1
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ python app.py
+Traceback (most recent call last):
+  File "/home/ubuntu/Ecommerce/app.py", line 5, in <module>
+    from flask_bcrypt import Bcrypt
+ModuleNotFoundError: No module named 'flask_bcrypt'
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ pip install flask_bcrypt
+Collecting flask_bcrypt
+  Downloading Flask_Bcrypt-1.0.1-py3-none-any.whl.metadata (2.6 kB)
+Requirement already satisfied: Flask in ./venv/lib/python3.14/site-packages (from flask_bcrypt) (3.1.3)
+Collecting bcrypt>=3.1.1 (from flask_bcrypt)
+  Downloading bcrypt-5.0.0-cp39-abi3-manylinux_2_34_x86_64.whl.metadata (10 kB)
+Requirement already satisfied: blinker>=1.9.0 in ./venv/lib/python3.14/site-packages (from Flask->flask_bcrypt) (1.9.0)
+Requirement already satisfied: click>=8.1.3 in ./venv/lib/python3.14/site-packages (from Flask->flask_bcrypt) (8.4.1)
+Requirement already satisfied: itsdangerous>=2.2.0 in ./venv/lib/python3.14/site-packages (from Flask->flask_bcrypt) (2.2.0)
+Requirement already satisfied: jinja2>=3.1.2 in ./venv/lib/python3.14/site-packages (from Flask->flask_bcrypt) (3.1.6)
+Requirement already satisfied: markupsafe>=2.1.1 in ./venv/lib/python3.14/site-packages (from Flask->flask_bcrypt) (3.0.3)
+Requirement already satisfied: werkzeug>=3.1.0 in ./venv/lib/python3.14/site-packages (from Flask->flask_bcrypt) (3.1.8)
+Downloading Flask_Bcrypt-1.0.1-py3-none-any.whl (6.0 kB)
+Downloading bcrypt-5.0.0-cp39-abi3-manylinux_2_34_x86_64.whl (278 kB)
+Installing collected packages: bcrypt, flask_bcrypt
+Successfully installed bcrypt-5.0.0 flask_bcrypt-1.0.1
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ python app.py
+Traceback (most recent call last):
+  File "/home/ubuntu/Ecommerce/app.py", line 11, in <module>
+    from mysql.connector import (connection)
+ModuleNotFoundError: No module named 'mysql'
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ pip install mysql-connector-python
+Collecting mysql-connector-python
+  Downloading mysql_connector_python-9.7.0-cp314-cp314-manylinux_2_28_x86_64.whl.metadata (11 kB)
+Downloading mysql_connector_python-9.7.0-cp314-cp314-manylinux_2_28_x86_64.whl (21.7 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 21.7/21.7 MB 147.3 MB/s eta 0:00:00
+Installing collected packages: mysql-connector-python
+Successfully installed mysql-connector-python-9.7.0
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ python app.py
+Traceback (most recent call last):
+  File "/home/ubuntu/Ecommerce/app.py", line 13, in <module>
+    from reportlab.platypus import(
+    ...<5 lines>...
+    )
+ModuleNotFoundError: No module named 'reportlab'
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ pip install reportlab
+Collecting reportlab
+  Downloading reportlab-5.0.0-py3-none-any.whl.metadata (1.6 kB)
+Collecting pillow>=9.0.0 (from reportlab)
+  Downloading pillow-12.2.0-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl.metadata (8.8 kB)
+Collecting charset-normalizer (from reportlab)
+  Downloading charset_normalizer-3.4.7-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl.metadata (40 kB)
+Downloading reportlab-5.0.0-py3-none-any.whl (2.0 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 2.0/2.0 MB 90.6 MB/s eta 0:00:00
+Downloading pillow-12.2.0-cp314-cp314-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl (7.1 MB)
+   ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 7.1/7.1 MB 78.8 MB/s eta 0:00:00
+Downloading charset_normalizer-3.4.7-cp314-cp314-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl (215 kB)
+Installing collected packages: pillow, charset-normalizer, reportlab
+Successfully installed charset-normalizer-3.4.7 pillow-12.2.0 reportlab-5.0.0
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ python app.py
+Traceback (most recent call last):
+  File "/home/ubuntu/Ecommerce/app.py", line 25, in <module>
+    import razorpay
+ModuleNotFoundError: No module named 'razorpay'
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ pip instal razorpay
+ERROR: unknown command "instal" - maybe you meant "install"
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ python app.py
+Traceback (most recent call last):
+  File "/home/ubuntu/Ecommerce/app.py", line 25, in <module>
+    import razorpay
+ModuleNotFoundError: No module named 'razorpay'
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ python -m pip install razorpay
+Collecting razorpay
+  Downloading razorpay-2.0.1-py3-none-any.whl.metadata (3.9 kB)
+Collecting requests (from razorpay)
+  Downloading requests-2.34.2-py3-none-any.whl.metadata (4.8 kB)
+Requirement already satisfied: charset_normalizer<4,>=2 in ./venv/lib/python3.14/site-packages (from requests->razorpay) (3.4.7)
+Collecting idna<4,>=2.5 (from requests->razorpay)
+  Downloading idna-3.18-py3-none-any.whl.metadata (6.1 kB)
+Collecting urllib3<3,>=1.26 (from requests->razorpay)
+  Downloading urllib3-2.7.0-py3-none-any.whl.metadata (6.9 kB)
+Collecting certifi>=2023.5.7 (from requests->razorpay)
+  Downloading certifi-2026.6.17-py3-none-any.whl.metadata (2.5 kB)
+Downloading razorpay-2.0.1-py3-none-any.whl (176 kB)
+Downloading requests-2.34.2-py3-none-any.whl (73 kB)
+Downloading idna-3.18-py3-none-any.whl (65 kB)
+Downloading urllib3-2.7.0-py3-none-any.whl (131 kB)
+Downloading certifi-2026.6.17-py3-none-any.whl (133 kB)
+Installing collected packages: urllib3, idna, certifi, requests, razorpay
+Successfully installed certifi-2026.6.17 idna-3.18 razorpay-2.0.1 requests-2.34.2 urllib3-2.7.0
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ python app.py
+Traceback (most recent call last):
+  File "/home/ubuntu/Ecommerce/app.py", line 31, in <module>
+    mydb=connection.MySQLConnection(user='root',host='localhost',password='admin',db='ecom2728db')
+  File "/home/ubuntu/Ecommerce/venv/lib/python3.14/site-packages/mysql/connector/connection.py", line 185, in __init__
+    self.connect(**kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/ubuntu/Ecommerce/venv/lib/python3.14/site-packages/mysql/connector/abstracts.py", line 1604, in connect
+    self._open_connection()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ubuntu/Ecommerce/venv/lib/python3.14/site-packages/mysql/connector/connection.py", line 411, in _open_connection
+    raise err
+  File "/home/ubuntu/Ecommerce/venv/lib/python3.14/site-packages/mysql/connector/connection.py", line 388, in _open_connection
+    self._do_auth(
+    ~~~~~~~~~~~~~^
+        self._user,
+        ^^^^^^^^^^^
+    ...<4 lines>...
+        self._conn_attrs,
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/ubuntu/Ecommerce/venv/lib/python3.14/site-packages/mysql/connector/connection.py", line 320, in _do_auth
+    ok_pkt = self._authenticator.authenticate(
+        sock=self._socket,
+    ...<10 lines>...
+        conn_attrs=conn_attrs,
+    )
+  File "/home/ubuntu/Ecommerce/venv/lib/python3.14/site-packages/mysql/connector/authentication.py", line 381, in authenticate
+    ok_pkt = self._handle_server_response(sock, pkt)
+  File "/home/ubuntu/Ecommerce/venv/lib/python3.14/site-packages/mysql/connector/authentication.py", line 287, in _handle_server_response
+    raise get_exception(pkt)
+mysql.connector.errors.ProgrammingError: 1698 (28000): Access denied for user 'root'@'localhost'
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ client_loop: send disconnect: Connection reset
+
+(ecommerceprj) C:\Users\bobba\Desktop\Flask_classwork\ecommerce2728>ssh -i "C:\Users\bobba\Downloads\ecom2728.pem" ubuntu@15.134.221.0
+Welcome to Ubuntu 26.04 LTS (GNU/Linux 7.0.0-1006-aws x86_64)
+
+ * Documentation:  https://docs.ubuntu.com
+ * Management:     https://landscape.canonical.com
+ * Support:        https://ubuntu.com/pro
+
+ System information as of Sat Jun 20 07:28:21 UTC 2026
+
+  System load:  0.08              Temperature:           -273.1 C
+  Usage of /:   46.5% of 6.61GB   Processes:             125
+  Memory usage: 79%               Users logged in:       0
+  Swap usage:   0%                IPv4 address for ens5: 172.31.21.107
+
+
+Expanded Security Maintenance for Applications is not enabled.
+
+0 updates can be applied immediately.
+
+2 additional security updates can be applied with ESM Apps.
+Learn more about enabling ESM Apps service at https://ubuntu.com/esm
+
+
+Last login: Sat Jun 20 06:58:25 2026 from 49.205.105.29
+ubuntu@ip-172-31-21-107:~$ https://github.com/bobbadilakshmi10-cmyk/Ecommerce.git
+-bash: https://github.com/bobbadilakshmi10-cmyk/Ecommerce.git: No such file or directory
+ubuntu@ip-172-31-21-107:~$ git clone https://github.com/bobbadilakshmi10-cmyk/Ecommerce.git
+fatal: destination path 'Ecommerce' already exists and is not an empty directory.
+ubuntu@ip-172-31-21-107:~$ cdEcommerce
+cdEcommerce: command not found
+ubuntu@ip-172-31-21-107:~$ cd Ecommerce
+ubuntu@ip-172-31-21-107:~/Ecommerce$ python app.py
+Command 'python' not found, did you mean:
+  command 'python3' from deb python3
+  command 'python' from deb python-is-python3
+ubuntu@ip-172-31-21-107:~/Ecommerce$ python app.py
+Command 'python' not found, did you mean:
+  command 'python3' from deb python3
+  command 'python' from deb python-is-python3
+ubuntu@ip-172-31-21-107:~/Ecommerce$ source venv/bin/activate
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ python app.py
+Traceback (most recent call last):
+  File "/home/ubuntu/Ecommerce/app.py", line 31, in <module>
+    mydb=connection.MySQLConnection(user='root',host='localhost',password='admin',db='ecom2728db')
+  File "/home/ubuntu/Ecommerce/venv/lib/python3.14/site-packages/mysql/connector/connection.py", line 185, in __init__
+    self.connect(**kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/ubuntu/Ecommerce/venv/lib/python3.14/site-packages/mysql/connector/abstracts.py", line 1604, in connect
+    self._open_connection()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ubuntu/Ecommerce/venv/lib/python3.14/site-packages/mysql/connector/connection.py", line 411, in _open_connection
+    raise err
+  File "/home/ubuntu/Ecommerce/venv/lib/python3.14/site-packages/mysql/connector/connection.py", line 388, in _open_connection
+    self._do_auth(
+    ~~~~~~~~~~~~~^
+        self._user,
+        ^^^^^^^^^^^
+    ...<4 lines>...
+        self._conn_attrs,
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/ubuntu/Ecommerce/venv/lib/python3.14/site-packages/mysql/connector/connection.py", line 320, in _do_auth
+    ok_pkt = self._authenticator.authenticate(
+        sock=self._socket,
+    ...<10 lines>...
+        conn_attrs=conn_attrs,
+    )
+  File "/home/ubuntu/Ecommerce/venv/lib/python3.14/site-packages/mysql/connector/authentication.py", line 381, in authenticate
+    ok_pkt = self._handle_server_response(sock, pkt)
+  File "/home/ubuntu/Ecommerce/venv/lib/python3.14/site-packages/mysql/connector/authentication.py", line 287, in _handle_server_response
+    raise get_exception(pkt)
+mysql.connector.errors.ProgrammingError: 1698 (28000): Access denied for user 'root'@'localhost'
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ sudo systemctl status mysql
+● mysql.service - MySQL Community Server
+     Loaded: loaded (/usr/lib/systemd/system/mysql.service; enabled; preset: enabled)
+     Active: active (running) since Sat 2026-06-20 07:33:19 UTC; 58s ago
+ Invocation: 9eebb1bd0c554d47bb7281f88b063bb1
+    Process: 9677 ExecStartPre=/usr/share/mysql/mysql-systemd-start pre (code=exited, status=0/SUCCESS)
+   Main PID: 9688 (mysqld)
+     Status: "Server is operational"
+      Tasks: 36 (limit: 627)
+     Memory: 485M (peak: 494.2M)
+        CPU: 1.715s
+     CGroup: /system.slice/mysql.service
+             └─9688 /usr/sbin/mysqld
+
+Jun 20 07:33:15 ip-172-31-21-107 systemd[1]: mysql.service: Consumed 23.255s CPU time over 54min 24.885s wall clock time, 495.8M memory peak.
+Jun 20 07:33:15 ip-172-31-21-107 systemd[1]: mysql.service: Scheduled restart job, restart counter is at 1.
+Jun 20 07:33:15 ip-172-31-21-107 systemd[1]: Starting mysql.service - MySQL Community Server...
+Jun 20 07:33:19 ip-172-31-21-107 systemd[1]: Started mysql.service - MySQL Community Server.
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ mysql -u root -p
+Enter password:
+ERROR 1698 (28000): Access denied for user 'root'@'localhost'
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ sudo mysql
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 10
+Server version: 8.4.9-0ubuntu0.26.04.1 (Ubuntu)
+
+Copyright (c) 2000, 2026, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> ^C
+mysql> SELECT user,host,plugin FROM mysql.user;
++------------------+-----------+-----------------------+
+| user             | host      | plugin                |
++------------------+-----------+-----------------------+
+| debian-sys-maint | localhost | auth_socket           |
+| flaskuser        | localhost | caching_sha2_password |
+| mysql.infoschema | localhost | caching_sha2_password |
+| mysql.session    | localhost | caching_sha2_password |
+| mysql.sys        | localhost | caching_sha2_password |
+| root             | localhost | auth_socket           |
++------------------+-----------+-----------------------+
+6 rows in set (0.03 sec)
+
+mysql> root | localhost | auth_socket
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'root | localhost | auth_socket' at line 1
+mysql> CREATE USER 'ecomuser'@'localhost' IDENTIFIED BY 'admin123';
+* TO 'ecomuser'@'localhost';
+FLUSH PRIVILEGES;Query OK, 0 rows affected (0.07 sec)
+
+mysql> GRANT ALL PRIVILEGES ON ecom2728db.* TO 'ecomuser'@'localhost';
+Query OK, 0 rows affected (0.00 sec)
+
+mysql> FLUSH PRIVILEGES;
+Query OK, 0 rows affected (0.01 sec)
+
+mysql> sudo mysql
+    -> SELECT user,host,plugin FROM mysql.user;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'sudo mysql
+SELECT user,host,plugin FROM mysql.user' at line 1
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| ecomdb             |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.02 sec)
+
+mysql> exit
+Bye
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ python app.py
+Traceback (most recent call last):
+  File "/home/ubuntu/Ecommerce/app.py", line 31, in <module>
+    mydb=connection.MySQLConnection(user='root',host='localhost',password='admin',db='ecom2728db')
+  File "/home/ubuntu/Ecommerce/venv/lib/python3.14/site-packages/mysql/connector/connection.py", line 185, in __init__
+    self.connect(**kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^
+  File "/home/ubuntu/Ecommerce/venv/lib/python3.14/site-packages/mysql/connector/abstracts.py", line 1604, in connect
+    self._open_connection()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/ubuntu/Ecommerce/venv/lib/python3.14/site-packages/mysql/connector/connection.py", line 411, in _open_connection
+    raise err
+  File "/home/ubuntu/Ecommerce/venv/lib/python3.14/site-packages/mysql/connector/connection.py", line 388, in _open_connection
+    self._do_auth(
+    ~~~~~~~~~~~~~^
+        self._user,
+        ^^^^^^^^^^^
+    ...<4 lines>...
+        self._conn_attrs,
+        ^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/home/ubuntu/Ecommerce/venv/lib/python3.14/site-packages/mysql/connector/connection.py", line 320, in _do_auth
+    ok_pkt = self._authenticator.authenticate(
+        sock=self._socket,
+    ...<10 lines>...
+        conn_attrs=conn_attrs,
+    )
+  File "/home/ubuntu/Ecommerce/venv/lib/python3.14/site-packages/mysql/connector/authentication.py", line 381, in authenticate
+    ok_pkt = self._handle_server_response(sock, pkt)
+  File "/home/ubuntu/Ecommerce/venv/lib/python3.14/site-packages/mysql/connector/authentication.py", line 287, in _handle_server_response
+    raise get_exception(pkt)
+mysql.connector.errors.ProgrammingError: 1698 (28000): Access denied for user 'root'@'localhost'
+(venv) ubuntu@ip-172-31-21-107:~/Ecommerce$ client_loop: send disconnect: Connection reset
+
+(ecommerceprj) C:\Users\bobba\Desktop\Flask_classwork\ecommerce2728>
